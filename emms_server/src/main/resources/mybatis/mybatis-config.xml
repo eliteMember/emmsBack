@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+	<!--Mybatis 설정 -->
+	<settings>
+		<setting name="jdbcTypeForNull" value="VARCHAR" />
+		<setting name="mapUnderscoreToCamelCase" value="true" />
+		<setting name="useColumnLabel" value="true"/>
+		<setting name="lazyLoadingEnabled" value="false" />
+		<setting name="cacheEnabled" value="false"/>
+		<setting name="logImpl" value="LOG4J2" />
+	</settings>
+	
+	<!-- Type Aliases 설정-->
+	<typeAliases>
+		<typeAlias alias="map" type="java.util.Map"/>
+		<typeAlias alias="hmap" type="java.util.HashMap"/>
+		<typeAlias alias="list" type="java.util.List" />
+		
+		<typeAlias alias="ApiMemberVO" type="com.emms.api.member.service.ApiMemberVO" />
+		<typeAlias alias="TestVO" type="com.emms.api.member.service.TestVO" />
+		
+	</typeAliases>
+	
+</configuration>

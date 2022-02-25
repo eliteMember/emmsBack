@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.emms.api.member.service.ApiMemberMapper">
+	
+  	<select id="getMember" resultType="ApiMemberVO" >
+		select MEMBER_SRL,
+				SITE_SRL,
+				GROUP_SRL,
+				MODULE_CONFIG_SRL
+		from 	kntool_member 
+		limit 0,1
+ 	</select>
+ 	
+ 	<select id="getTest" resultType="TestVO" >
+		select no, text
+		from 	newtable 
+		limit 0,1
+ 	</select>	
+	
+	
+</mapper>
