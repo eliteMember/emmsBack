@@ -18,8 +18,11 @@
 		<typeAlias alias="hmap" type="java.util.HashMap"/>
 		<typeAlias alias="list" type="java.util.List" />
 		
+		<!-- TEST -->
 		<typeAlias alias="ApiMemberVO" type="com.emms.api.member.service.ApiMemberVO" />
 		<typeAlias alias="TestVO" type="com.emms.api.member.service.TestVO" />
+		
+		<!-- TABLE Aliases -->
 		
 	</typeAliases>
 	
