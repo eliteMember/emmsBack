@@ -26,7 +26,14 @@ public class WebMvcConfig implements WebMvcConfigurer {
 
     	AuthenticInterceptor authenticInterceptor = new AuthenticInterceptor();
         registry.addInterceptor(authenticInterceptor)
-                .addPathPatterns("/api/**")
-                .excludePathPatterns("/api/cmmn/**");
+        
+        		//원본
+        		//.addPathPatterns("/api/**")
+                //.excludePathPatterns("/api/cmmn/**")
+        		//.excludePathPatterns("/api/login");
+        
+        		//테스트 진행
+        		.excludePathPatterns("/api/**");
+        		
     }
 }
