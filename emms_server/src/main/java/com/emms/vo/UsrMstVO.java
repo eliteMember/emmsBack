@@ -6,7 +6,7 @@ import java.util.Date;
 import lombok.Data;
 
 @Data
-public class UserMstVO implements Serializable {
+public class UsrMstVO implements Serializable {
 
 	/**
 	 * 
