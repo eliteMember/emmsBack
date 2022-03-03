@@ -18,10 +18,6 @@
 		<typeAlias alias="hmap" type="java.util.HashMap"/>
 		<typeAlias alias="list" type="java.util.List" />
 		
-		<!-- TEST -->
-		<typeAlias alias="ApiMemberVO" type="com.emms.api.member.service.ApiMemberVO" />
-		<typeAlias alias="TestVO" type="com.emms.api.member.service.TestVO" />
-		
 		<!-- TABLE Aliases -->
 		<typeAlias alias="UsrMstVO" type="com.emms.vo.UsrMstVO" />
 		<typeAlias alias="AuthMstVO" type="com.emms.vo.AuthMstVO" />
@@ -31,7 +27,7 @@
 		<typeAlias alias="PrjMstVO" type="com.emms.vo.PrjMstVO" />
 		<typeAlias alias="PrjMhrLstVO" type="com.emms.vo.PrjMhrLstVO" />
 		<typeAlias alias="PrjMhrMmLstVO" type="com.emms.vo.PrjMhrMmLstVO" />
-		<typeAlias alias="PrjBfrCstLstVO" type="com.emms.vo.prjBfrCstLstVO" />
+		<typeAlias alias="PrjBfrCstLstVO" type="com.emms.vo.PrjBfrCstLstVO" />
 		<typeAlias alias="PrjTrtCstLstVO" type="com.emms.vo.PrjTrtCstLstVO" />
 		<typeAlias alias="MemMstVO" type="com.emms.vo.MemMstVO" />
 		<typeAlias alias="RelCopLstVO" type="com.emms.vo.RelCopLstVO" />
