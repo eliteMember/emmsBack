@@ -6,7 +6,7 @@ import java.util.Date;
 import lombok.Data;
 
 @Data
-public class PrjBfrCstLstVO implements Serializable {
+public class TB_PRJ_BFR_CST_LST_VO implements Serializable {
 	
 	/**
 	 * 

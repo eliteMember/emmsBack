@@ -6,7 +6,7 @@ import java.util.Date;
 import lombok.Data;
 
 @Data
-public class MemMstVO implements Serializable {
+public class TB_MEM_MST_VO implements Serializable {
 
 	/**
 	 * 

@@ -6,7 +6,7 @@ import java.util.Date;
 import lombok.Data;
 
 @Data
-public class RelCopLstVO implements Serializable {
+public class TB_REL_COP_LST_VO implements Serializable {
 	
 	/**
 	 * 

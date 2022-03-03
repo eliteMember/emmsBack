@@ -6,16 +6,14 @@ import java.util.Date;
 import lombok.Data;
 
 @Data
-public class AuthLstVO implements Serializable {
+public class TB_TIM_MST_VO implements Serializable {
 
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 3367766610192307877L;
-	private String authNum;		//권한번호
-	private String mnuNum;      //메뉴번호
-	private String rdAuthYn;    //읽기권한여부
-	private String wrtAuthYn;   //쓰기권한여부
+	private static final long serialVersionUID = 3304417455484365725L;
+	private String timNum;		//팀번호
+	private String timNm;       //팀명
 	private Date   crtDtm;      //등록일시
 	private String crtUsrNum;   //등록사용자번호
 	private Date   mdfDtm;      //수정일시

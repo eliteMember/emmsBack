@@ -6,17 +6,16 @@ import java.util.Date;
 import lombok.Data;
 
 @Data
-public class MnuMstVO implements Serializable {
+public class TB_CD_LST_VO implements Serializable {
 
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 7511652607943934917L;
-	private String mnuNum;		//메뉴번호
-	private String mnuNm;       //메뉴명
-	private String mnuUrl;      //메뉴URL
-	private String prtMnuNum;   //상위메뉴번호
-	private String srtOdr;      //정렬순서
+	private static final long serialVersionUID = 3212293541942208512L;
+	private String cdDivVal;	//코드구분값
+	private String cdVal;       //코드값
+	private String cdDivNm;     //코드구분명
+	private String cdNm;        //코드명
 	private String useYn;       //사용여부
 	private Date   crtDtm;      //등록일시
 	private String crtUsrNum;   //등록사용자번호

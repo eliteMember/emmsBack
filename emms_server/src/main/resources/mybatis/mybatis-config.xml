@@ -19,21 +19,22 @@
 		<typeAlias alias="list" type="java.util.List" />
 		
 		<!-- TABLE Aliases -->
-		<typeAlias alias="UsrMstVO" type="com.emms.vo.UsrMstVO" />
-		<typeAlias alias="AuthMstVO" type="com.emms.vo.AuthMstVO" />
-		<typeAlias alias="AuthLstVO" type="com.emms.vo.AuthLstVO" />
-		<typeAlias alias="MnuMstVO" type="com.emms.vo.MnuMstVO" />
-		<typeAlias alias="TimMstVO" type="com.emms.vo.TimMstVO" />
-		<typeAlias alias="PrjMstVO" type="com.emms.vo.PrjMstVO" />
-		<typeAlias alias="PrjMhrLstVO" type="com.emms.vo.PrjMhrLstVO" />
-		<typeAlias alias="PrjMhrMmLstVO" type="com.emms.vo.PrjMhrMmLstVO" />
-		<typeAlias alias="PrjBfrCstLstVO" type="com.emms.vo.PrjBfrCstLstVO" />
-		<typeAlias alias="PrjTrtCstLstVO" type="com.emms.vo.PrjTrtCstLstVO" />
-		<typeAlias alias="MemMstVO" type="com.emms.vo.MemMstVO" />
-		<typeAlias alias="RelCopLstVO" type="com.emms.vo.RelCopLstVO" />
-		<typeAlias alias="RelDocLstVO" type="com.emms.vo.RelDocLstVO" />
-		<typeAlias alias="StdUnpLstVO" type="com.emms.vo.StdUnpLstVO" />
-		<typeAlias alias="CdLstVO" type="com.emms.vo.CdLstVO" />
+		<typeAlias alias="TB_AUTH_LST_VO" 			type="com.emms.vo.TB_AUTH_LST_VO" />
+		<typeAlias alias="TB_AUTH_MST_VO" 			type="com.emms.vo.TB_AUTH_MST_VO" />
+		<typeAlias alias="TB_CD_LST_VO" 			type="com.emms.vo.TB_CD_LST_VO" />
+		<typeAlias alias="TB_MEM_MST_VO" 			type="com.emms.vo.TB_MEM_MST_VO" />
+		<typeAlias alias="TB_MNU_MST_VO" 			type="com.emms.vo.TB_MNU_MST_VO" />
+		<typeAlias alias="TB_PRJ_BFR_CST_LST_VO" 	type="com.emms.vo.TB_PRJ_BFR_CST_LST_VO" />
+		<typeAlias alias="TB_PRJ_EST_LST_VO" 		type="com.emms.vo.TB_PRJ_EST_LST_VO" />
+		<typeAlias alias="TB_PRJ_MHR_LST_VO" 		type="com.emms.vo.TB_PRJ_MHR_LST_VO" />
+		<typeAlias alias="TB_PRJ_MHR_MM_LST_VO" 	type="com.emms.vo.TB_PRJ_MHR_MM_LST_VO" />
+		<typeAlias alias="TB_PRJ_MST_VO" 			type="com.emms.vo.TB_PRJ_MST_VO" />
+		<typeAlias alias="TB_PRJ_TRT_CST_LST_VO" 	type="com.emms.vo.TB_PRJ_TRT_CST_LST_VO" />
+		<typeAlias alias="TB_REL_COP_LST_VO" 		type="com.emms.vo.TB_REL_COP_LST_VO" />
+		<typeAlias alias="TB_REL_DOC_LST_VO" 		type="com.emms.vo.TB_REL_DOC_LST_VO" />
+		<typeAlias alias="TB_STD_UNP_LST_VO" 		type="com.emms.vo.TB_STD_UNP_LST_VO" />
+		<typeAlias alias="TB_TIM_MST_VO" 			type="com.emms.vo.TB_TIM_MST_VO" />
+		<typeAlias alias="TB_USR_MST_VO" 			type="com.emms.vo.TB_USR_MST_VO" />
 	</typeAliases>
 	
 </configuration>
