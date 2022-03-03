@@ -12,20 +12,20 @@ public class PrjMhrMmLstVO implements Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = 2097816352428144636L;
-	private String prjNum;		//ÇÁ·ÎÁ§Æ®¹øÈ£
-	private String mhrKndCd;    //°ø¼öÁ¾·ùÄÚµå
-	private String memNum;      //ÀÎ·Â¹øÈ£
-	private String mhrYm;       //°ø¼ö³â¿ù
-	private int    mmSalQty;    //¿ù¸ÅÃâ¼ö·®
-	private long   mmSalUnp;    //¿ù¸ÅÃâ´Ü°¡
-	private long   mmSalAmt;    //¿ù¸ÅÃâ±İ¾×
-	private int    mmPurQty;    //¿ù¸ÅÀÔ¼ö·®
-	private long   mmPurUnp;    //¿ù¸ÅÀÔ´Ü°¡
-	private long   mmPurAmt;    //¿ù¸ÅÀÔ±İ¾×
-	private long   totPrfAmt;   //ÃÑÀÌÀÍ±İ¾×
-	private Date   crtDtm;      //µî·ÏÀÏ½Ã
-	private String crtUsrNum;   //µî·Ï»ç¿ëÀÚ¹øÈ£
-	private Date   mdfDtm;      //¼öÁ¤ÀÏ½Ã
-	private String mdfUsrNum;   //¼öÁ¤»ç¿ëÀÚ¹øÈ£
+	private String prjNum;		//í”„ë¡œì íŠ¸ë²ˆí˜¸
+	private String mhrKndCd;    //ê³µìˆ˜ì¢…ë¥˜ì½”ë“œ
+	private String memNum;      //ì¸ë ¥ë²ˆí˜¸
+	private String mhrYm;       //ê³µìˆ˜ë…„ì›”
+	private int    mmSalQty;    //ì›”ë§¤ì¶œìˆ˜ëŸ‰
+	private long   mmSalUnp;    //ì›”ë§¤ì¶œë‹¨ê°€
+	private long   mmSalAmt;    //ì›”ë§¤ì¶œê¸ˆì•¡
+	private int    mmPurQty;    //ì›”ë§¤ì…ìˆ˜ëŸ‰
+	private long   mmPurUnp;    //ì›”ë§¤ì…ë‹¨ê°€
+	private long   mmPurAmt;    //ì›”ë§¤ì…ê¸ˆì•¡
+	private long   totPrfAmt;   //ì´ì´ìµê¸ˆì•¡
+	private Date   crtDtm;      //ë“±ë¡ì¼ì‹œ
+	private String crtUsrNum;   //ë“±ë¡ì‚¬ìš©ìë²ˆí˜¸
+	private Date   mdfDtm;      //ìˆ˜ì •ì¼ì‹œ
+	private String mdfUsrNum;   //ìˆ˜ì •ì‚¬ìš©ìë²ˆí˜¸
 
 }

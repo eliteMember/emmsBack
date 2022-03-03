@@ -12,18 +12,18 @@ public class RelDocLstVO implements Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = 610061053839217227L;
-	private String prjNum;		//ÇÁ·ÎÁ§Æ®¹øÈ£
-	private String relDocNum;   //°ü·Ã¼­·ù¹øÈ£
-	private String docClsCd;    //¼­·ùºĞ·ùÄÚµå
-	private String filNm;       //ÆÄÀÏ¸í
-	private String filPth;      //ÆÄÀÏ°æ·Î
-	private String orgFilNm;    //¿øº»ÆÄÀÏ¸í
-	private long   filSiz;      //ÆÄÀÏÅ©±â
-	private String filExt;      //ÆÄÀÏÈ®ÀåÀÚ
-	private Date   crtDtm;      //µî·ÏÀÏ½Ã
-	private String crtUsrNum;   //µî·Ï»ç¿ëÀÚ¹øÈ£
-	private Date   mdfDtm;      //¼öÁ¤ÀÏ½Ã
-	private String mdfUsrNum;   //¼öÁ¤»ç¿ëÀÚ¹øÈ£
+	private String prjNum;		//í”„ë¡œì íŠ¸ë²ˆí˜¸
+	private String relDocNum;   //ê´€ë ¨ì„œë¥˜ë²ˆí˜¸
+	private String docClsCd;    //ì„œë¥˜ë¶„ë¥˜ì½”ë“œ
+	private String filNm;       //íŒŒì¼ëª…
+	private String filPth;      //íŒŒì¼ê²½ë¡œ
+	private String orgFilNm;    //ì›ë³¸íŒŒì¼ëª…
+	private long   filSiz;      //íŒŒì¼í¬ê¸°
+	private String filExt;      //íŒŒì¼í™•ì¥ì
+	private Date   crtDtm;      //ë“±ë¡ì¼ì‹œ
+	private String crtUsrNum;   //ë“±ë¡ì‚¬ìš©ìë²ˆí˜¸
+	private Date   mdfDtm;      //ìˆ˜ì •ì¼ì‹œ
+	private String mdfUsrNum;   //ìˆ˜ì •ì‚¬ìš©ìë²ˆí˜¸
 
 
 }

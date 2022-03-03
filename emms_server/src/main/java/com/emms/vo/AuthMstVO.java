@@ -13,12 +13,12 @@ public class AuthMstVO implements Serializable {
 	 */
 	private static final long serialVersionUID = -6008642851587004986L;
 	
-	private String 	authNum;		//±ÇÇÑ¹øÈ£
-	private String 	authNm;         //±ÇÇÑ¸í
-	private Date 	crtDtm;         //µî·ÏÀÏ½Ã
-	private String 	crtUsrNum;      //µî·Ï»ç¿ëÀÚ¹øÈ£
-	private Date 	mdfDtm;         //¼öÁ¤ÀÏ½Ã
-	private String 	mdfUsrNum;      //¼öÁ¤»ç¿ëÀÚ¹øÈ£
+	private String 	authNum;		//ê¶Œí•œë²ˆí˜¸
+	private String 	authNm;         //ê¶Œí•œëª…
+	private Date 	crtDtm;         //ë“±ë¡ì¼ì‹œ
+	private String 	crtUsrNum;      //ë“±ë¡ì‚¬ìš©ìë²ˆí˜¸
+	private Date 	mdfDtm;         //ìˆ˜ì •ì¼ì‹œ
+	private String 	mdfUsrNum;      //ìˆ˜ì •ì‚¬ìš©ìë²ˆí˜¸
 
 	
 

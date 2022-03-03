@@ -12,20 +12,20 @@ public class PrjTrtCstLstVO implements Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = -7341670981186976722L;
-	private String prjNum;		//ÇÁ·ÎÁ§Æ®¹øÈ£
-	private String cstKndCd;    //ºñ¿ëÁ¾·ùÄÚµå
-	private String trtYm;       //Ã³¸®³â¿ù
-	private int    cstSeq;      //ºñ¿ëÀÏ·Ã¹øÈ£
-	private String cstDivCd;    //ºñ¿ë±¸ºĞÄÚµå
-	private String cstItmNm;    //ºñ¿ëÇ°¸ñ¸í
-	private long   fcstCstAmt;  //¿ø°¡ºñ¿ë±İ¾×
-	private long   trtCstAmt;   //Ã³¸®ºñ¿ë±İ¾×
-	private long   polAmt;      //¼ÕÀÍ±İ¾×
-	private String rmk;         //ºñ°í
-	private Date   crtDtm;      //µî·ÏÀÏ½Ã
-	private String crtUsrNum;   //µî·Ï»ç¿ëÀÚ¹øÈ£
-	private Date   mdfDtm;      //¼öÁ¤ÀÏ½Ã
-	private String mdfUsrNum;   //¼öÁ¤»ç¿ëÀÚ¹øÈ£
+	private String prjNum;		//í”„ë¡œì íŠ¸ë²ˆí˜¸
+	private String cstKndCd;    //ë¹„ìš©ì¢…ë¥˜ì½”ë“œ
+	private String trtYm;       //ì²˜ë¦¬ë…„ì›”
+	private int    cstSeq;      //ë¹„ìš©ì¼ë ¨ë²ˆí˜¸
+	private String cstDivCd;    //ë¹„ìš©êµ¬ë¶„ì½”ë“œ
+	private String cstItmNm;    //ë¹„ìš©í’ˆëª©ëª…
+	private long   fcstCstAmt;  //ì›ê°€ë¹„ìš©ê¸ˆì•¡
+	private long   trtCstAmt;   //ì²˜ë¦¬ë¹„ìš©ê¸ˆì•¡
+	private long   polAmt;      //ì†ìµê¸ˆì•¡
+	private String rmk;         //ë¹„ê³ 
+	private Date   crtDtm;      //ë“±ë¡ì¼ì‹œ
+	private String crtUsrNum;   //ë“±ë¡ì‚¬ìš©ìë²ˆí˜¸
+	private Date   mdfDtm;      //ìˆ˜ì •ì¼ì‹œ
+	private String mdfUsrNum;   //ìˆ˜ì •ì‚¬ìš©ìë²ˆí˜¸
 
 	
 }

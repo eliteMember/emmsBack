@@ -12,24 +12,24 @@ public class UserMstVO implements Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = -6167946120658180056L;
-	private String usrNum;		//»ç¿ëÀÚ¹øÈ£
-	private String usrName;     //»ç¿ëÀÚÀÌ¸§
-	private String usrBirMd;    //»ç¿ëÀÚ»ı³â¿ùÀÏ
-	private String usrEmail;    //»ç¿ëÀÚÀÌ¸ŞÀÏ
-	private String usrTelNum;   //»ç¿ëÀÚÀüÈ­¹øÈ£
-	private String usrAdr;      //»ç¿ëÀÚÁÖ¼Ò
-	private String incCd;       //Á÷À§ÄÚµå
-	private String apoCd;       //Á÷Ã¥ÄÚµå
-	private String eduCd;       //ÇĞ·ÂÄÚµå
-	private String timNum;      //ÆÀ¹øÈ£
-	private String loginId;     //·Î±×ÀÎID
-	private String passNum;     //ºñ¹Ğ¹øÈ£
-	private String joinYn;      //°¡ÀÔ¿©ºÎ
-	private String delYn;       //»èÁ¦¿©ºÎ
-	private String rmk;         //ºñ°í
-	private Date   crtDtm;      //µî·ÏÀÏ½Ã
-	private String crtUsrNum;   //µî·Ï»ç¿ëÀÚ¹øÈ£
-	private Date   mdfDtm;      //¼öÁ¤ÀÏ½Ã
-	private String mdfUsrNum;   //¼öÁ¤»ç¿ëÀÚ¹øÈ£
+	private String usrNum;		//ì‚¬ìš©ìë²ˆí˜¸
+	private String usrName;     //ì‚¬ìš©ìì´ë¦„
+	private String usrBirMd;    //ì‚¬ìš©ììƒë…„ì›”ì¼
+	private String usrEmail;    //ì‚¬ìš©ìì´ë©”ì¼
+	private String usrTelNum;   //ì‚¬ìš©ìì „í™”ë²ˆí˜¸
+	private String usrAdr;      //ì‚¬ìš©ìì£¼ì†Œ
+	private String incCd;       //ì§ìœ„ì½”ë“œ
+	private String apoCd;       //ì§ì±…ì½”ë“œ
+	private String eduCd;       //í•™ë ¥ì½”ë“œ
+	private String timNum;      //íŒ€ë²ˆí˜¸
+	private String loginId;     //ë¡œê·¸ì¸ID
+	private String passNum;     //ë¹„ë°€ë²ˆí˜¸
+	private String joinYn;      //ê°€ì…ì—¬ë¶€
+	private String delYn;       //ì‚­ì œì—¬ë¶€
+	private String rmk;         //ë¹„ê³ 
+	private Date   crtDtm;      //ë“±ë¡ì¼ì‹œ
+	private String crtUsrNum;   //ë“±ë¡ì‚¬ìš©ìë²ˆí˜¸
+	private Date   mdfDtm;      //ìˆ˜ì •ì¼ì‹œ
+	private String mdfUsrNum;   //ìˆ˜ì •ì‚¬ìš©ìë²ˆí˜¸
 
 }

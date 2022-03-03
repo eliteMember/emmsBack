@@ -12,12 +12,12 @@ public class TimMstVO implements Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = 3304417455484365725L;
-	private String timNum;		//ÆÀ¹øÈ£
-	private String timNm;       //ÆÀ¸í
-	private Date   crtDtm;      //µî·ÏÀÏ½Ã
-	private String crtUsrNum;   //µî·Ï»ç¿ëÀÚ¹øÈ£
-	private Date   mdfDtm;      //¼öÁ¤ÀÏ½Ã
-	private String mdfUsrNum;   //¼öÁ¤»ç¿ëÀÚ¹øÈ£
+	private String timNum;		//íŒ€ë²ˆí˜¸
+	private String timNm;       //íŒ€ëª…
+	private Date   crtDtm;      //ë“±ë¡ì¼ì‹œ
+	private String crtUsrNum;   //ë“±ë¡ì‚¬ìš©ìë²ˆí˜¸
+	private Date   mdfDtm;      //ìˆ˜ì •ì¼ì‹œ
+	private String mdfUsrNum;   //ìˆ˜ì •ì‚¬ìš©ìë²ˆí˜¸
 
 
 }

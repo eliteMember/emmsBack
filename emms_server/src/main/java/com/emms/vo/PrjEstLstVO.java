@@ -12,18 +12,18 @@ public class PrjEstLstVO implements Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = 4181971054644045305L;
-	private String prjNum;		//ÇÁ·ÎÁ§Æ®¹øÈ£
-	private int    estRnkSeq;   //°ßÀûµî±ŞÀÏ·Ã¹øÈ£
-	private String estRnkCd;    //°ßÀûµî±ŞÄÚµå
-	private long   stdUnp;      //Ç¥ÁØ´Ü°¡
-	private long   dscAmt;      //ÇÒÀÎ±İ¾×
-	private long   ofrUnp;      //Á¦¾È´Ü°¡
-	private int    totDepQty;   //ÃÑÅõÀÔ¼ö·®
-	private long   estAmt;      //°ßÀû±İ¾×
-	private String rmk;         //ºñ°í
-	private Date   crtDtm;      //µî·ÏÀÏ½Ã
-	private String crtUsrNum;   //µî·Ï»ç¿ëÀÚ¹øÈ£
-	private Date   mdfDtm;      //¼öÁ¤ÀÏ½Ã
-	private String mdfUsrNum;   //¼öÁ¤»ç¿ëÀÚ¹øÈ£
+	private String prjNum;		//í”„ë¡œì íŠ¸ë²ˆí˜¸
+	private int    estRnkSeq;   //ê²¬ì ë“±ê¸‰ì¼ë ¨ë²ˆí˜¸
+	private String estRnkCd;    //ê²¬ì ë“±ê¸‰ì½”ë“œ
+	private long   stdUnp;      //í‘œì¤€ë‹¨ê°€
+	private long   dscAmt;      //í• ì¸ê¸ˆì•¡
+	private long   ofrUnp;      //ì œì•ˆë‹¨ê°€
+	private int    totDepQty;   //ì´íˆ¬ì…ìˆ˜ëŸ‰
+	private long   estAmt;      //ê²¬ì ê¸ˆì•¡
+	private String rmk;         //ë¹„ê³ 
+	private Date   crtDtm;      //ë“±ë¡ì¼ì‹œ
+	private String crtUsrNum;   //ë“±ë¡ì‚¬ìš©ìë²ˆí˜¸
+	private Date   mdfDtm;      //ìˆ˜ì •ì¼ì‹œ
+	private String mdfUsrNum;   //ìˆ˜ì •ì‚¬ìš©ìë²ˆí˜¸
 
 }

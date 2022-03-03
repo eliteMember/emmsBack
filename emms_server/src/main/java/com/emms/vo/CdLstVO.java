@@ -12,15 +12,15 @@ public class CdLstVO implements Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = 3212293541942208512L;
-	private String cdDivVal;	//ÄÚµå±¸ºĞ°ª
-	private String cdVal;       //ÄÚµå°ª
-	private String cdDivNm;     //ÄÚµå±¸ºĞ¸í
-	private String cdNm;        //ÄÚµå¸í
-	private String useYn;       //»ç¿ë¿©ºÎ
-	private Date   crtDtm;      //µî·ÏÀÏ½Ã
-	private String crtUsrNum;   //µî·Ï»ç¿ëÀÚ¹øÈ£
-	private Date   mdfDtm;      //¼öÁ¤ÀÏ½Ã
-	private String mdfUsrNum;   //¼öÁ¤»ç¿ëÀÚ¹øÈ£
+	private String cdDivVal;	//ì½”ë“œêµ¬ë¶„ê°’
+	private String cdVal;       //ì½”ë“œê°’
+	private String cdDivNm;     //ì½”ë“œêµ¬ë¶„ëª…
+	private String cdNm;        //ì½”ë“œëª…
+	private String useYn;       //ì‚¬ìš©ì—¬ë¶€
+	private Date   crtDtm;      //ë“±ë¡ì¼ì‹œ
+	private String crtUsrNum;   //ë“±ë¡ì‚¬ìš©ìë²ˆí˜¸
+	private Date   mdfDtm;      //ìˆ˜ì •ì¼ì‹œ
+	private String mdfUsrNum;   //ìˆ˜ì •ì‚¬ìš©ìë²ˆí˜¸
 
 
 }

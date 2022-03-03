@@ -12,12 +12,12 @@ public class StdUnpLstVO implements Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = 650710027635297259L;
-	private int    unpSeq;		//´Ü°¡ÀÏ·Ã¹øÈ£
-	private String estRnkCd;    //°ßÀûµî±ŞÄÚµå
-	private long   stdUnp;      //Ç¥ÁØ´Ü°¡
-	private Date   crtDtm;      //µî·ÏÀÏ½Ã
-	private String crtUsrNum;   //µî·Ï»ç¿ëÀÚ¹øÈ£
-	private Date   mdfDtm;      //¼öÁ¤ÀÏ½Ã
-	private String mdfUsrNum;   //¼öÁ¤»ç¿ëÀÚ¹øÈ£
+	private int    unpSeq;		//ë‹¨ê°€ì¼ë ¨ë²ˆí˜¸
+	private String estRnkCd;    //ê²¬ì ë“±ê¸‰ì½”ë“œ
+	private long   stdUnp;      //í‘œì¤€ë‹¨ê°€
+	private Date   crtDtm;      //ë“±ë¡ì¼ì‹œ
+	private String crtUsrNum;   //ë“±ë¡ì‚¬ìš©ìë²ˆí˜¸
+	private Date   mdfDtm;      //ìˆ˜ì •ì¼ì‹œ
+	private String mdfUsrNum;   //ìˆ˜ì •ì‚¬ìš©ìë²ˆí˜¸
 
 }

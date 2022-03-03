@@ -12,16 +12,16 @@ public class RelCopLstVO implements Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = -1680056821311543724L;
-	private String prjNum;		//ÇÁ·ÎÁ§Æ®¹øÈ£
-	private int    copSeq;      //¾÷Ã¼ÀÏ·Ã¹øÈ£
-	private String copDivCd;    //¾÷Ã¼±¸ºĞÄÚµå
-	private String copNm;       //¾÷Ã¼¸í
-	private String copMgrName;  //¾÷Ã¼´ã´çÀÚÀÌ¸§
-	private String copMgrCtt;   //¾÷Ã¼´ã´çÀÚ¿¬¶ôÃ³
-	private Date   crtDtm;      //µî·ÏÀÏ½Ã
-	private String crtUsrNum;   //µî·Ï»ç¿ëÀÚ¹øÈ£
-	private Date   mdfDtm;      //¼öÁ¤ÀÏ½Ã
-	private String mdfUsrNum;   //¼öÁ¤»ç¿ëÀÚ¹øÈ£
+	private String prjNum;		//í”„ë¡œì íŠ¸ë²ˆí˜¸
+	private int    copSeq;      //ì—…ì²´ì¼ë ¨ë²ˆí˜¸
+	private String copDivCd;    //ì—…ì²´êµ¬ë¶„ì½”ë“œ
+	private String copNm;       //ì—…ì²´ëª…
+	private String copMgrName;  //ì—…ì²´ë‹´ë‹¹ìì´ë¦„
+	private String copMgrCtt;   //ì—…ì²´ë‹´ë‹¹ìì—°ë½ì²˜
+	private Date   crtDtm;      //ë“±ë¡ì¼ì‹œ
+	private String crtUsrNum;   //ë“±ë¡ì‚¬ìš©ìë²ˆí˜¸
+	private Date   mdfDtm;      //ìˆ˜ì •ì¼ì‹œ
+	private String mdfUsrNum;   //ìˆ˜ì •ì‚¬ìš©ìë²ˆí˜¸
 
 
 

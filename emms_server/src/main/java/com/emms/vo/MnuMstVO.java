@@ -12,16 +12,16 @@ public class MnuMstVO implements Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = 7511652607943934917L;
-	private String mnuNum;		//¸Ş´º¹øÈ£
-	private String mnuNm;       //¸Ş´º¸í
-	private String mnuUrl;      //¸Ş´ºURL
-	private String prtMnuNum;   //»óÀ§¸Ş´º¹øÈ£
-	private String srtOdr;      //Á¤·Ä¼ø¼­
-	private String useYn;       //»ç¿ë¿©ºÎ
-	private Date   crtDtm;      //µî·ÏÀÏ½Ã
-	private String crtUsrNum;   //µî·Ï»ç¿ëÀÚ¹øÈ£
-	private Date   mdfDtm;      //¼öÁ¤ÀÏ½Ã
-	private String mdfUsrNum;   //¼öÁ¤»ç¿ëÀÚ¹øÈ£
+	private String mnuNum;		//ë©”ë‰´ë²ˆí˜¸
+	private String mnuNm;       //ë©”ë‰´ëª…
+	private String mnuUrl;      //ë©”ë‰´URL
+	private String prtMnuNum;   //ìƒìœ„ë©”ë‰´ë²ˆí˜¸
+	private String srtOdr;      //ì •ë ¬ìˆœì„œ
+	private String useYn;       //ì‚¬ìš©ì—¬ë¶€
+	private Date   crtDtm;      //ë“±ë¡ì¼ì‹œ
+	private String crtUsrNum;   //ë“±ë¡ì‚¬ìš©ìë²ˆí˜¸
+	private Date   mdfDtm;      //ìˆ˜ì •ì¼ì‹œ
+	private String mdfUsrNum;   //ìˆ˜ì •ì‚¬ìš©ìë²ˆí˜¸
 
 
 }

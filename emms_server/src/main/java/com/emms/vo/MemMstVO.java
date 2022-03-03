@@ -12,24 +12,24 @@ public class MemMstVO implements Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = -6938812680472073938L;
-	private String memNum;		//ÀÎ·Â¹øÈ£
-	private String memName;     //ÀÎ·ÂÀÌ¸§
-	private String memBirMd;    //ÀÎ·Â»ı³â¿ùÀÏ
-	private String incCd;       //Á÷À§ÄÚµå
-	private String memRnkCd;    //ÀÎ·Âµî±ŞÄÚµå
-	private String eduCd;       //ÇĞ·ÂÄÚµå
-	private String ctfNm;       //ÀÚ°İÁõ¸í
-	private long   memUnp;      //ÀÎ·Â´Ü°¡
-	private long   memFcst;     //ÀÎ·Â¿ø°¡
-	private String memCtt;      //ÀÎ·Â¿¬¶ôÃ³
-	private String memAdr;      //ÀÎ·ÂÁÖ¼Ò
-	private String affTimName;  //¼Ò¼ÓÆÀÀÌ¸§
-	private String affCoName;   //¼Ò¼ÓÈ¸»çÀÌ¸§
-	private String usrNum;      //»ç¿ëÀÚ¹øÈ£
-	private Date   crtDtm;      //µî·ÏÀÏ½Ã
-	private String crtUsrNum;   //µî·Ï»ç¿ëÀÚ¹øÈ£
-	private Date   mdfDtm;      //¼öÁ¤ÀÏ½Ã
-	private String mdfUsrNum;   //¼öÁ¤»ç¿ëÀÚ¹øÈ£
+	private String memNum;		//ì¸ë ¥ë²ˆí˜¸
+	private String memName;     //ì¸ë ¥ì´ë¦„
+	private String memBirMd;    //ì¸ë ¥ìƒë…„ì›”ì¼
+	private String incCd;       //ì§ìœ„ì½”ë“œ
+	private String memRnkCd;    //ì¸ë ¥ë“±ê¸‰ì½”ë“œ
+	private String eduCd;       //í•™ë ¥ì½”ë“œ
+	private String ctfNm;       //ìê²©ì¦ëª…
+	private long   memUnp;      //ì¸ë ¥ë‹¨ê°€
+	private long   memFcst;     //ì¸ë ¥ì›ê°€
+	private String memCtt;      //ì¸ë ¥ì—°ë½ì²˜
+	private String memAdr;      //ì¸ë ¥ì£¼ì†Œ
+	private String affTimName;  //ì†Œì†íŒ€ì´ë¦„
+	private String affCoName;   //ì†Œì†íšŒì‚¬ì´ë¦„
+	private String usrNum;      //ì‚¬ìš©ìë²ˆí˜¸
+	private Date   crtDtm;      //ë“±ë¡ì¼ì‹œ
+	private String crtUsrNum;   //ë“±ë¡ì‚¬ìš©ìë²ˆí˜¸
+	private Date   mdfDtm;      //ìˆ˜ì •ì¼ì‹œ
+	private String mdfUsrNum;   //ìˆ˜ì •ì‚¬ìš©ìë²ˆí˜¸
 
 
 	
