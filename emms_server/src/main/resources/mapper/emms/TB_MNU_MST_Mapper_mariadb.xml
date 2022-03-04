@@ -2,7 +2,25 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.emms.mapper.TB_MNU_MST_Mapper">
-	
-	
-	
+	<select id="TB_MNU_MST_PL001" parameterType="String"  resultType="TB_MNU_MST_VO" >
+		select MNU_NUM
+			 , MNU_NM
+			 , MNU_URL
+			 , PRT_MNU_NUM
+			 , SRT_ODR
+			 , USE_YN
+			 , CRT_DTM
+			 , CRT_USR_NUM
+			 , MDF_DTM
+			 , MDF_USR_NUM
+		from TB_MNU_MST
+	   where USE_YN = 'Y'
+	   <if test="mnuNum == null or mnuNum == ''">
+	     and PRT_MNU_NUM is null
+	   </if>
+	   <if test="mnuNum != null and mnuNum != ''">
+	   	 and PRT_MNU_NUM = #{mnuNum}
+	   </if>
+	   order by SRT_ODR
+ 	</select>
 </mapper>
