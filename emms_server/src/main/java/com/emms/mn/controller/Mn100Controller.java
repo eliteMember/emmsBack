@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.ui.ModelMap;
 import org.springframework.util.ObjectUtils;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -22,7 +23,7 @@ public class Mn100Controller {
 	@Resource(name = "mn100Service")
 	private Mn100Service mn100Service;
 	
-	@GetMapping(value = "/api/login")
+	@PostMapping(value = "/api/login")
 	public ResponseEntity<SessionVO> getSession(
 			HttpServletRequest request,
 			@RequestParam(required=true) String loginId,
