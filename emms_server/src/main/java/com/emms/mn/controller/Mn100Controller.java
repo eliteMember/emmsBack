@@ -1,5 +1,7 @@
 package com.emms.mn.controller;
 
+import java.util.Map;
+
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -10,6 +12,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.util.ObjectUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -26,13 +29,12 @@ public class Mn100Controller {
 	@PostMapping(value = "/api/login")
 	public ResponseEntity<SessionVO> getSession(
 			HttpServletRequest request,
-			@RequestParam(required=true) String loginId,
-			@RequestParam(required=true) String password,
+			@RequestBody Map<String,String> paramMap,
 			ModelMap model) throws Exception {
 		
 		TB_USR_MST_VO paramVO = new TB_USR_MST_VO();
-		paramVO.setLoginId(loginId);
-		paramVO.setPassNum(password);
+		paramVO.setLoginId(paramMap.get("loginId"));
+		paramVO.setPassNum(paramMap.get("password"));
 		TB_USR_MST_VO resultVO = mn100Service.selectMember(paramVO);
 		
 		SessionVO sessionVO = new SessionVO();
