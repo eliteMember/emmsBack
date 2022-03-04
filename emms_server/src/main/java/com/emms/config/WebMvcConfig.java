@@ -1,30 +1,20 @@
 package com.emms.config;
 
-import javax.sql.DataSource;
-
-import org.apache.ibatis.session.SqlSessionFactory;
-import org.mybatis.spring.SqlSessionFactoryBean;
-import org.mybatis.spring.SqlSessionTemplate;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.boot.jdbc.DataSourceBuilder;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.Bean;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
-import com.emms.config.interceptor.AuthenticInterceptor;
+import com.emms.cmmn.interceptor.AuthenticInterceptor;
 
 @Configuration
 public class WebMvcConfig implements WebMvcConfigurer {
 
+	@Autowired
+	private AuthenticInterceptor authenticInterceptor;
+	
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-
-    	AuthenticInterceptor authenticInterceptor = new AuthenticInterceptor();
         registry.addInterceptor(authenticInterceptor)
         
         		//원본
@@ -33,7 +23,7 @@ public class WebMvcConfig implements WebMvcConfigurer {
         		//.excludePathPatterns("/api/login");
         
         		//테스트 진행
-        		.excludePathPatterns("/api/**");
+        		.excludePathPatterns("/**");
         		
     }
 }

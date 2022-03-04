@@ -15,6 +15,16 @@ public class SessionVO implements Serializable {
 	private boolean isLogin = false;
 	private TB_USR_MST_VO tbUsrMstVo;
 	
+	public SessionVO() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public SessionVO(TB_USR_MST_VO tbUsrMstVo) {
+		super();
+		this.tbUsrMstVo = tbUsrMstVo;
+	}
+	
 	public boolean isLogin() {
 		if( this.tbUsrMstVo == null ) {
 			isLogin = false;

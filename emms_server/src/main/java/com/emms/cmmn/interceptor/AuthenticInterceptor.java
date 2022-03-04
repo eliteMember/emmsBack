@@ -1,4 +1,4 @@
-package com.emms.config.interceptor;
+package com.emms.cmmn.interceptor;
 
 
 import javax.servlet.http.HttpServletRequest;
@@ -7,13 +7,14 @@ import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.http.ResponseEntity;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.emms.cmmn.SessionVO;
 import com.emms.cmmn.exception.CustomException;
 
+@Configuration
 public class AuthenticInterceptor implements HandlerInterceptor {
 
 	protected Logger LOGGER = LoggerFactory.getLogger(this.getClass());
