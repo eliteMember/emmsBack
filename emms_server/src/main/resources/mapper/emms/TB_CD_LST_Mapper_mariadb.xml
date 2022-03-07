@@ -2,6 +2,20 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.emms.mapper.TB_CD_LST_Mapper">
+	<select id="TB_CD_LST_PL001" parameterType="String" resultType="TB_CD_LST_VO">
+		select CD_DIV_VAL
+			 , CD_VAL
+			 , CD_DIV_NM
+			 , CD_NM
+		from tb_cd_lst
+		where USE_YN = 'Y'
+		and CD_DIV_VAL = #{cdDivVal}
+	</select>
+	
+	<select id="TB_CD_LST_PL002" parameterType="String" resultType="TB_CD_LST_VO">
+		select distinct CD_DIV_VAL
+		from tb_cd_lst
+	</select>
 	
 	
 	
