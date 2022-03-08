@@ -10,6 +10,7 @@ import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -30,9 +31,8 @@ public class MenuController {
 	 * @date   : 2022-03-03
 	 * @return : HashMap<List<TB_MNU_MST_VO>>
 	 */
-	@SuppressWarnings("null")
 	@GetMapping("/getList")
-	public HashMap<String, List<TB_MNU_MST_VO>> searchMenuList() {
+	public ResponseEntity<HashMap<String, List<TB_MNU_MST_VO>>> searchMenuList() {
 		//로그인한 계정을 입력받아 권한에 따른 메뉴 리턴 필요
 		HashMap<String, List<TB_MNU_MST_VO>> result = new HashMap<String, List<TB_MNU_MST_VO>>();
 		List<TB_MNU_MST_VO> lstChild = new ArrayList<TB_MNU_MST_VO>();
@@ -48,6 +48,6 @@ public class MenuController {
 			result.put(lstParent.get(i).getMnuNum(), lstChild);
 		}
 		
-		return result;
+		return ResponseEntity.ok(result);
 	}
 }
