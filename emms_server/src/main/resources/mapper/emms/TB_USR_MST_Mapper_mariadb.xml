@@ -29,5 +29,26 @@
 		   AND PASS_NUM = #{passNum} 
 		 LIMIT 0,1
  	</select>	
+ 	
+ 	<select id="TB_USR_MST_VL001" parameterType="String" resultType="TB_USR_MST_VO">
+ 		SELECT  A.USR_NUM
+ 			   ,A.LOGIN_ID
+ 			   ,A.USR_NAME
+ 			   ,A.USR_BIR_MD
+ 			   ,B.CD_NM AS INC_CD
+ 			   ,C.AUTH_NM AS APO_CD
+ 			   ,A.USR_EMAIL
+ 			   ,A.USR_TEL_NUM
+ 			   ,D.TIM_NM AS TIM_NUM
+ 			   ,A.JOIN_YN
+ 		FROM TB_USR_MST AS A
+ 		LEFT OUTER JOIN tb_cd_lst AS B
+ 			   ON A.INC_CD = B.CD_VAL
+ 		LEFT OUTER JOIN TB_AUTH_MST AS C
+ 			   ON LEFT(A.APO_CD,'3') = LEFT(C.AUTH_NUM,'3')
+ 		LEFT OUTER JOIN TB_TIM_MST AS D
+ 			   ON A.TIM_NUM = D.TIM_NUM
+ 		ORDER BY A.USR_NUM DESC
+ 	</select>
 	
 </mapper>
