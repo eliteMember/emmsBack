@@ -31,6 +31,8 @@ public class TB_MEM_MST_VO implements Serializable {
 	private Date   mdfDtm;      //수정일시
 	private String mdfUsrNum;   //수정사용자번호
 
-
+	private String incNm;			//직위명
+	private String memRnkNm;	//인력등급명
+	private String eduNm;			//학력명
 	
 }

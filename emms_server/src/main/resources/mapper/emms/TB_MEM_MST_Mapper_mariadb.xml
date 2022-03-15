@@ -3,6 +3,65 @@
 
 <mapper namespace="com.emms.mapper.TB_MEM_MST_Mapper">
 	
+	<select id="TB_MEM_MST_PL001" resultType="TB_MEM_MST_VO">
+		SELECT
+			MEM_NUM
+			, MEM_NAME
+			, MEM_BIR_MD
+			, INC_CD
+			, (SELECT CD_NM FROM TB_CD_LST WHERE CD_DIV_VAL = 'INC_CD' AND CD_VAL = X.INC_CD ) AS INC_NM
+			, MEM_RNK_CD
+			, (SELECT CD_NM FROM TB_CD_LST WHERE CD_DIV_VAL = 'RNK_CD' AND CD_VAL = X.MEM_RNK_CD ) AS MEM_RNK_NM
+			, EDU_CD
+			, (SELECT CD_NM FROM TB_CD_LST WHERE CD_DIV_VAL = 'EDU_CD' AND CD_VAL = X.EDU_CD ) AS EDU_NM
+			, CTF_NM
+			, MEM_UNP
+			, MEM_FCST
+			, MEM_CTT
+			, MEM_ADR
+			, AFF_TIM_NAME
+			, AFF_CO_NAME
+			, USR_NUM
+			, CRT_DTM
+			, CRT_USR_NUM
+			, MDF_DTM
+			, MDF_USR_NUM
+		FROM TB_MEM_MST X
+		WHERE 1 = 1
+			<if test=" memName != null and memName != '' ">
+				AND MEM_NAME LIKE CONCAT('%',#{memName},'%')
+			</if>
+			<if test=" memRnkCd != 'all' ">
+				AND MEM_RNK_CD = #{memRnkCd}
+			</if>
+	</select>
 	
+	<select id="TB_MEM_MST_PL002" resultType="TB_MEM_MST_VO">
+		SELECT
+			MEM_NUM
+			, MEM_NAME
+			, MEM_BIR_MD
+			, INC_CD
+			, (SELECT CD_NM FROM TB_CD_LST WHERE CD_DIV_VAL = 'INC_CD' AND CD_VAL = X.INC_CD ) AS INC_NM
+			, MEM_RNK_CD
+			, (SELECT CD_NM FROM TB_CD_LST WHERE CD_DIV_VAL = 'RNK_CD' AND CD_VAL = X.MEM_RNK_CD ) AS MEM_RNK_NM
+			, EDU_CD
+			, (SELECT CD_NM FROM TB_CD_LST WHERE CD_DIV_VAL = 'EDU_CD' AND CD_VAL = X.EDU_CD ) AS EDU_NM
+			, CTF_NM
+			, MEM_UNP
+			, MEM_FCST
+			, MEM_CTT
+			, MEM_ADR
+			, AFF_TIM_NAME
+			, AFF_CO_NAME
+			, USR_NUM
+			, CRT_DTM
+			, CRT_USR_NUM
+			, MDF_DTM
+			, MDF_USR_NUM
+		FROM TB_MEM_MST X
+		WHERE 1 = 1
+			AND MEM_NUM = #{memNum}
+	</select>
 	
 </mapper>
