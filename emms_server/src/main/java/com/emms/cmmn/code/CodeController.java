@@ -19,20 +19,20 @@ import com.emms.vo.TB_CD_LST_VO;
 public class CodeController {
 	
 	@Autowired
-	TB_CD_LST_Mapper tb_cd_lst_mapper;
+	CodeService codeService;
 	
 	@GetMapping("/getCode")
-	public HashMap<String, List<TB_CD_LST_VO>> getCodeList(HttpServletRequest request) {
+	public HashMap<String, List<TB_CD_LST_VO>> getCodeList(HttpServletRequest request) throws Exception {
 		
 		HttpSession session = request.getSession();
 		
 		
 		HashMap<String, List<TB_CD_LST_VO>> result = new HashMap<String, List<TB_CD_LST_VO>>();
 		
-		List<TB_CD_LST_VO> lstParent = tb_cd_lst_mapper.TB_CD_LST_PL002();
+		List<TB_CD_LST_VO> lstParent = codeService.selectParent();
 		
 		for(int i=0; i<lstParent.size(); i++) {
-			List<TB_CD_LST_VO> lstChild = tb_cd_lst_mapper.TB_CD_LST_PL001(lstParent.get(i).getCdDivVal());
+			List<TB_CD_LST_VO> lstChild = codeService.selectChild(lstParent.get(i).getCdDivVal());
 			result.put(lstParent.get(i).getCdDivVal(), lstChild);
 		}
 		
