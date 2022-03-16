@@ -3,6 +3,16 @@
 
 <mapper namespace="com.emms.mapper.TB_TIM_MST_Mapper">
 	
-	
+	<select id="TB_TIM_MST_PL001" resultType="TB_TIM_MST_VO">
+		SELECT
+			  TIM_NUM
+			, TIM_NM
+			, CRT_DTM
+			, CRT_USR_NUM
+			, MDF_DTM
+			, MDF_USR_NUM
+		FROM TB_TIM_MST X
+		WHERE 1 = 1
+	</select>
 	
 </mapper>
