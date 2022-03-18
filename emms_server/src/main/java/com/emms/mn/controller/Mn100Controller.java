@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.emms.cmmn.SessionVO;
+import com.emms.mn.service.LoginVO;
 import com.emms.mn.service.Mn100Service;
 import com.emms.vo.TB_USR_MST_VO;
 
@@ -31,10 +32,10 @@ public class Mn100Controller {
 			@RequestBody Map<String,String> paramMap,
 			ModelMap model) throws Exception {
 		
-		TB_USR_MST_VO paramVO = new TB_USR_MST_VO();
+		TB_USR_MST_VO paramVO = new LoginVO();
 		paramVO.setLoginId(paramMap.get("loginId"));
 		paramVO.setPassNum(paramMap.get("password"));
-		TB_USR_MST_VO resultVO = mn100Service.selectMember(paramVO);
+		LoginVO resultVO = mn100Service.selectMember(paramVO);
 		
 		SessionVO sessionVO = new SessionVO();
 		if( !ObjectUtils.isEmpty(resultVO) ) {

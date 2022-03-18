@@ -11,11 +11,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.emms.cmmn.service.CmmnService;
-import com.emms.mapper.TB_TIM_MST_Mapper;
 import com.emms.vo.TB_TIM_MST_VO;
 
 @RestController
@@ -65,11 +64,11 @@ public class CmmnController {
 	
 	
 	/*
-	 * interceptor 테스트용도
+	 * 공통 팀 전체 목록 불러오기
 	 * */
 	@GetMapping(value = "/api/cmmn/listTeam")
 	public ResponseEntity<Map<String, Object>> listTeam(
-			@RequestParam TB_TIM_MST_VO paramVO, 
+			TB_TIM_MST_VO paramVO, 
 			HttpServletRequest request,
 			
 			ModelMap model) throws Exception {
