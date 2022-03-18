@@ -1,5 +1,6 @@
 package com.emms.mn.service;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,5 +20,10 @@ public class Mn400Service {
 		List<TB_USR_MST_VO> tbUsrMstVo = tb_usr_mst_mapper.TB_USR_MST_VL001();
 		
 		return tbUsrMstVo;
+	}
+	
+	public void updateList(HashMap<String, String> map) throws Exception{
+
+		tb_usr_mst_mapper.TB_USR_MST_PU001(map);
 	}
 }

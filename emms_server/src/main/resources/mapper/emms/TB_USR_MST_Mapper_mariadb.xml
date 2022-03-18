@@ -50,5 +50,10 @@
  			   ON A.TIM_NUM = D.TIM_NUM
  		ORDER BY A.USR_NUM DESC
  	</select>
+ 	
+ 	<update id="TB_USR_MST_PU001" parameterType="Map">
+ 		UPDATE tb_usr_mst SET ${column} = #{value} WHERE USR_NUM = #{id};
+ 	</update>
+ 	
 	
 </mapper>

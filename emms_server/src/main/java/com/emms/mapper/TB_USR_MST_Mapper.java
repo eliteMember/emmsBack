@@ -1,6 +1,7 @@
 
 package com.emms.mapper;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
@@ -14,4 +15,7 @@ public interface TB_USR_MST_Mapper {
 	
 	List<TB_USR_MST_VO> TB_USR_MST_VL001();
 	
+	void TB_USR_MST_PU001(HashMap<String, String> map);
+	
+	void TB_USR_MST_PU002(String id, String bir);
 }
