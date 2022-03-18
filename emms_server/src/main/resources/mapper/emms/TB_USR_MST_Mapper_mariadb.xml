@@ -4,7 +4,7 @@
 <mapper namespace="com.emms.mapper.TB_USR_MST_Mapper">
 	
 	<!-- 로그인, 아이디 패스워드로 조회 -->
-	<select id="TB_USR_MST_PS001" resultType="TB_USR_MST_VO" >
+	<select id="TB_USR_MST_PS001" resultType="LoginVO" >
 		SELECT  USR_NUM
 		       ,USR_NAME
 		       ,USR_BIR_MD
