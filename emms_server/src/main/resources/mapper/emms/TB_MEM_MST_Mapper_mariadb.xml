@@ -3,6 +3,7 @@
 
 <mapper namespace="com.emms.mapper.TB_MEM_MST_Mapper">
 	
+	<!-- 목록조회 -->
 	<select id="TB_MEM_MST_PL001" resultType="TB_MEM_MST_VO">
 		SELECT
 			MEM_NUM
@@ -36,6 +37,7 @@
 			</if>
 	</select>
 	
+	<!-- 상세조회 -->
 	<select id="TB_MEM_MST_PL002" resultType="TB_MEM_MST_VO">
 		SELECT
 			MEM_NUM
@@ -63,5 +65,49 @@
 		WHERE 1 = 1
 			AND MEM_NUM = #{memNum}
 	</select>
+	
+	<!-- 등록 -->
+	<insert id="TB_MEM_MST_PL003" parameterType="TB_MEM_MST_VO">
+		INSERT INTO EMMS.TB_MEM_MST
+		(
+			MEM_NUM,
+			MEM_NAME,
+			MEM_BIR_MD,
+			INC_CD,
+			MEM_RNK_CD,
+			EDU_CD,
+			CTF_NM,
+			MEM_UNP,
+			MEM_FCST,
+			MEM_CTT,
+			MEM_ADR,
+			AFF_TIM_NAME,
+			AFF_CO_NAME,
+			USR_NUM,
+			CRT_DTM,
+			CRT_USR_NUM,
+			MDF_DTM,
+			MDF_USR_NUM
+		) values (
+			(SELECT FN_GET_MEM_NUM())
+			, #{memName}
+			, #{memBirMd}
+			, #{incCd}
+			, #{memRnkCd}
+			, #{eduCd}
+			, #{ctfNm}
+			, #{memUnp}
+			, #{memFcst}
+			, #{memCtt}
+			, #{memAdr}
+			, #{affTimName}
+			, #{affCoName}
+			, (SELECT USR_NUM FROM TB_USR_MST WHERE USR_NAME = #{memName} AND USR_BIR_MD = #{memBirMd})
+			, SYSDATE()
+			, 'SYSTEM'
+			, SYSDATE()
+			, null
+		)
+	</insert>
 	
 </mapper>

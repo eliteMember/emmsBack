@@ -15,4 +15,6 @@ public interface TB_MEM_MST_Mapper {
 	
 	public TB_MEM_MST_VO TB_MEM_MST_PL002(@Param("memNum")String memNum) throws Exception;
 	
+	public Integer TB_MEM_MST_PL003(TB_MEM_MST_VO paramVO) throws Exception;
+	
 }

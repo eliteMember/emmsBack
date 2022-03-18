@@ -21,5 +21,9 @@ public class Me100Service {
 	public TB_MEM_MST_VO selectMemTargetData(String memNum) throws Exception {
 		return tbMemMstMapper.TB_MEM_MST_PL002(memNum);
 	}
+	
+	public Integer insertMemData(TB_MEM_MST_VO paramVO) throws Exception {
+		return tbMemMstMapper.TB_MEM_MST_PL003(paramVO);
+	}
 
 }
