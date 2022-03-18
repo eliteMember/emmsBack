@@ -58,14 +58,15 @@ public class Mn400Controller {
 	}
 	
 	@PostMapping("/resetPW")
-	public String resetPW (HttpServletRequest requst,@RequestBody Map<String,String> paramMap) throws Exception{
+	public HashMap<String, List<TB_USR_MST_VO>> resetPW (HttpServletRequest requst,@RequestBody Map<String,String> paramMap) throws Exception{
 		
 		String usrNum = paramMap.get("usrNum");
 		String usrBirMd = "U2W" + paramMap.get("usrBirMd");
-		System.out.println(paramMap.get("usrNum"));
-		System.out.println(paramMap.get("usrBirMd"));
-		System.out.println(usrNum);
-		System.out.println(usrBirMd);
+		HashMap<String, String> update = new HashMap<String, String>();
+		update.put("usrNum", usrNum);
+		update.put("usrBirMd", usrBirMd);
+		mn400Service.updatePW(update);
+		
 		return null;
 	}
 }

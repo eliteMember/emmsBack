@@ -26,4 +26,8 @@ public class Mn400Service {
 
 		tb_usr_mst_mapper.TB_USR_MST_PU001(map);
 	}
+	public void updatePW(HashMap<String, String> map) throws Exception{
+
+		tb_usr_mst_mapper.TB_USR_MST_PU002(map);
+	}
 }

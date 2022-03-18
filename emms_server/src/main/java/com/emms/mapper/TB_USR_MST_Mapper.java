@@ -18,5 +18,5 @@ public interface TB_USR_MST_Mapper {
 	
 	void TB_USR_MST_PU001(HashMap<String, String> map);
 	
-	void TB_USR_MST_PU002(String id, String bir);
+	void TB_USR_MST_PU002(HashMap<String, String> map);
 }
