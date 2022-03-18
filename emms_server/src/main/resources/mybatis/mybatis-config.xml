@@ -18,6 +18,9 @@
 		<typeAlias alias="hmap" type="java.util.HashMap"/>
 		<typeAlias alias="list" type="java.util.List" />
 		
+		
+		<typeAlias alias="LoginVO" 			type="com.emms.mn.service.LoginVO" />
+		
 		<!-- TABLE Aliases -->
 		<typeAlias alias="TB_AUTH_LST_VO" 			type="com.emms.vo.TB_AUTH_LST_VO" />
 		<typeAlias alias="TB_AUTH_MST_VO" 			type="com.emms.vo.TB_AUTH_MST_VO" />

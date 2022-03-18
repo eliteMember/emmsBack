@@ -31,5 +31,6 @@ public class TB_USR_MST_VO implements Serializable {
 	private String crtUsrNum;   //등록사용자번호
 	private Date   mdfDtm;      //수정일시
 	private String mdfUsrNum;   //수정사용자번호
+	
 
 }

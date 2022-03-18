@@ -4,27 +4,30 @@
 <mapper namespace="com.emms.mapper.TB_USR_MST_Mapper">
 	
 	<!-- 로그인, 아이디 패스워드로 조회 -->
-	<select id="TB_USR_MST_PS001" resultType="TB_USR_MST_VO" >
-		SELECT  USR_NUM
-		       ,USR_NAME
-		       ,USR_BIR_MD
-		       ,USR_EMAIL
-		       ,USR_TEL_NUM
-		       ,USR_ADR
-		       ,INC_CD
-		       ,APO_CD
-		       ,EDU_CD
-		       ,TIM_NUM
-		       ,LOGIN_ID
-		       ,PASS_NUM
-		       ,JOIN_YN
-		       ,DEL_YN
-		       ,RMK
-		       ,CRT_DTM
-		       ,CRT_USR_NUM
-		       ,MDF_DTM
-		       ,MDF_USR_NUM
-		  FROM TB_USR_MST
+	<select id="TB_USR_MST_PS001" resultType="LoginVO" >
+		SELECT  T1.USR_NUM
+		       ,T1.USR_NAME
+		       ,T1.USR_BIR_MD
+		       ,T1.USR_EMAIL
+		       ,T1.USR_TEL_NUM
+		       ,T1.USR_ADR
+		       ,T1.INC_CD
+		       ,T1.APO_CD
+		       ,T1.EDU_CD
+		       ,T1.TIM_NUM
+		       ,T1.LOGIN_ID
+		       ,T1.PASS_NUM
+		       ,T1.JOIN_YN
+		       ,T1.DEL_YN
+		       ,T1.RMK
+		       ,T1.CRT_DTM
+		       ,T1.CRT_USR_NUM
+		       ,T1.MDF_DTM
+		       ,T1.MDF_USR_NUM
+		       ,T2.TIM_NM
+		  FROM TB_USR_MST T1
+		       LEFT OUTER JOIN TB_TIM_MST T2
+		                    ON T1.TIM_NUM = T2.TIM_NUM
 		 WHERE LOGIN_ID = #{loginId}
 		   AND PASS_NUM = #{passNum} 
 		 LIMIT 0,1
