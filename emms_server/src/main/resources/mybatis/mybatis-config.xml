@@ -38,6 +38,8 @@
 		<typeAlias alias="TB_STD_UNP_LST_VO" 		type="com.emms.vo.TB_STD_UNP_LST_VO" />
 		<typeAlias alias="TB_TIM_MST_VO" 			type="com.emms.vo.TB_TIM_MST_VO" />
 		<typeAlias alias="TB_USR_MST_VO" 			type="com.emms.vo.TB_USR_MST_VO" />
+		
+		<typeAlias alias="Me100_TB_MEM_MST_VO" 			type="com.emms.me.service.Me100_TB_MEM_MST_VO" />
 	</typeAliases>
 	
 </configuration>

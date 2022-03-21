@@ -4,7 +4,7 @@
 <mapper namespace="com.emms.mapper.TB_MEM_MST_Mapper">
 	
 	<!-- 목록조회 -->
-	<select id="TB_MEM_MST_PL001" resultType="TB_MEM_MST_VO">
+	<select id="TB_MEM_MST_PL001" resultType="Me100_TB_MEM_MST_VO">
 		SELECT
 			MEM_NUM
 			, MEM_NAME
@@ -27,8 +27,11 @@
 			, CRT_USR_NUM
 			, MDF_DTM
 			, MDF_USR_NUM
+			, MEM_SEQ
+			, USE_YN
 		FROM TB_MEM_MST X
 		WHERE 1 = 1
+			AND USE_YN = 'Y'
 			<if test=" memName != null and memName != '' ">
 				AND MEM_NAME LIKE CONCAT('%',#{memName},'%')
 			</if>
@@ -38,7 +41,7 @@
 	</select>
 	
 	<!-- 상세조회 -->
-	<select id="TB_MEM_MST_PL002" resultType="TB_MEM_MST_VO">
+	<select id="TB_MEM_MST_PL002" resultType="Me100_TB_MEM_MST_VO">
 		SELECT
 			MEM_NUM
 			, MEM_NAME
@@ -61,13 +64,16 @@
 			, CRT_USR_NUM
 			, MDF_DTM
 			, MDF_USR_NUM
+			, MEM_SEQ
+			, USE_YN
 		FROM TB_MEM_MST X
 		WHERE 1 = 1
+			AND USE_YN = 'Y'
 			AND MEM_NUM = #{memNum}
 	</select>
 	
 	<!-- 등록 -->
-	<insert id="TB_MEM_MST_PL003" parameterType="TB_MEM_MST_VO">
+	<insert id="TB_MEM_MST_PL003" parameterType="Me100_TB_MEM_MST_VO">
 		INSERT INTO EMMS.TB_MEM_MST
 		(
 			MEM_NUM,
@@ -87,9 +93,12 @@
 			CRT_DTM,
 			CRT_USR_NUM,
 			MDF_DTM,
-			MDF_USR_NUM
+			MDF_USR_NUM,
+			MEM_SEQ,
+			USE_YN
 		) values (
-			(SELECT FN_GET_MEM_NUM())
+			<if test=" memNum != null and memNum != '' ">#{memNum}</if>
+			<if test=" memNum == null or memNum == '' ">(SELECT FN_GET_MEM_NUM())</if>
 			, #{memName}
 			, #{memBirMd}
 			, #{incCd}
@@ -107,7 +116,19 @@
 			, 'SYSTEM'
 			, SYSDATE()
 			, null
+			<if test=" memNum != null and memNum != '' ">,(SELECT COUNT(TB.MEM_NUM) FROM TB_MEM_MST TB WHERE TB.MEM_NUM = #{memNum})</if>
+			<if test=" memNum == null or memNum == '' ">,0</if>
+			, 'Y'
 		)
 	</insert>
+	
+	<update id="TB_MEM_MST_PL004" >
+		UPDATE EMMS.TB_MEM_MST
+			SET USE_YN = 'N'
+		WHERE 1 = 1
+			AND MEM_NUM = #{memNum}
+			AND USE_YN = 'Y'
+			AND MEM_SEQ <![CDATA[!=]]> (SELECT MAX(TB.MEM_SEQ) FROM TB_MEM_MST TB WHERE TB.MEM_NUM = #{memNum})
+	</update>
 	
 </mapper>

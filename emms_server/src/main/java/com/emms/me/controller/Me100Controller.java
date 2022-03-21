@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.emms.cmmn.SessionVO;
 import com.emms.me.service.Me100Service;
-import com.emms.vo.TB_MEM_MST_VO;
+import com.emms.me.service.Me100_TB_MEM_MST_VO;
 
 @RestController
 public class Me100Controller {
@@ -37,7 +37,7 @@ public class Me100Controller {
 			@RequestBody Map<String,String> paramMap,
 			ModelMap model) throws Exception {
 		
-		TB_MEM_MST_VO paramVO = new TB_MEM_MST_VO();
+		Me100_TB_MEM_MST_VO paramVO = new Me100_TB_MEM_MST_VO();
 		paramVO.setMemName(paramMap.get("memName"));
 		paramVO.setMemRnkCd(paramMap.get("memRnkCd"));
 		
@@ -80,7 +80,7 @@ public class Me100Controller {
 	@PostMapping(value = "/api/memAddData")
 	public ResponseEntity<Map<String,Object>> memAddData(
 			HttpServletRequest request,
-			@RequestBody TB_MEM_MST_VO paramVO,
+			@RequestBody Me100_TB_MEM_MST_VO paramVO,
 			ModelMap model) throws Exception {
 		
 		HttpSession session = request.getSession();
