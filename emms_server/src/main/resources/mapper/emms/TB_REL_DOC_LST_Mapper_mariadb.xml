@@ -3,6 +3,22 @@
 
 <mapper namespace="com.emms.mapper.TB_REL_DOC_LST_Mapper">
 	
-	
+	<select id="TB_REL_DOC_LST_PL001" resultType="TB_REL_DOC_LST_VO">
+ 		SELECT  PRJ_NUM
+				, REL_DOC_NUM
+				, DOC_CLS_CD
+				, FIL_NM
+				, FIL_PTH
+				, ORG_FIL_NM
+				, FIL_SIZ
+				, FIL_EXT
+				, CRT_DTM
+				, CRT_USR_NUM
+				, MDF_DTM
+				, MDF_USR_NUM
+ 		FROM TB_REL_DOC_LST
+ 	   WHERE PRJ_NUM = #{prjNum}
+ 		ORDER BY A.USR_NUM DESC
+ 	</select>
 	
 </mapper>
