@@ -14,9 +14,9 @@ public interface TB_USR_MST_Mapper {
 
 	LoginVO TB_USR_MST_PS001(TB_USR_MST_VO vo);
 	
-	List<TB_USR_MST_VO> TB_USR_MST_VL001();
-	
 	void TB_USR_MST_PU001(HashMap<String, String> map);
 	
 	void TB_USR_MST_PU002(HashMap<String, String> map);
+	
+	String TB_USR_MST_PS002();
 }
