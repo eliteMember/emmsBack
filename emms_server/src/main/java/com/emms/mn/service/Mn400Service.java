@@ -15,12 +15,7 @@ public class Mn400Service {
 	@Autowired
 	TB_USR_MST_Mapper tb_usr_mst_mapper;
 	
-	public List<TB_USR_MST_VO> selectList() throws Exception{
-		
-		List<TB_USR_MST_VO> tbUsrMstVo = tb_usr_mst_mapper.TB_USR_MST_VL001();
-		
-		return tbUsrMstVo;
-	}
+	
 	
 	public void updateList(HashMap<String, String> map) throws Exception{
 
@@ -29,5 +24,12 @@ public class Mn400Service {
 	public void updatePW(HashMap<String, String> map) throws Exception{
 
 		tb_usr_mst_mapper.TB_USR_MST_PU002(map);
+	}
+	
+	public String totalCnt() throws Exception{
+		
+		String totalCnt = tb_usr_mst_mapper.TB_USR_MST_PS002();
+		
+		return totalCnt;
 	}
 }

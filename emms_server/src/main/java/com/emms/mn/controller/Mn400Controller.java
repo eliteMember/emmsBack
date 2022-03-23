@@ -24,17 +24,7 @@ public class Mn400Controller {
 	@Autowired
 	Mn400Service mn400Service;
 	
-	@GetMapping("/getList")
-	public HashMap<String, List<TB_USR_MST_VO>> getList() throws Exception{
-		
-		HashMap<String, List<TB_USR_MST_VO>> result = new HashMap<String, List<TB_USR_MST_VO>>();
-		
-		List<TB_USR_MST_VO> mstParent = mn400Service.selectList();
-
-		result.put("USR", mstParent);
-		
-		return result;
-	}
+	
 	
 	@PostMapping("/updateMember")
 	public HashMap<String, List<TB_USR_MST_VO>> updateMember (HttpServletRequest request,
@@ -49,12 +39,8 @@ public class Mn400Controller {
 		update.put("value", value);
 		mn400Service.updateList(update);
 		
-		HashMap<String , List<TB_USR_MST_VO>> result = new HashMap<String, List<TB_USR_MST_VO>>();
-		List<TB_USR_MST_VO> mstParent = mn400Service.selectList();
-
-		result.put("USR", mstParent);
 		
-		return result;
+		return null;
 	}
 	
 	@PostMapping("/resetPW")

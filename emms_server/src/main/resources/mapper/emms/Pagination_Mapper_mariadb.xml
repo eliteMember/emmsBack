@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.emms.mapper.Pagination_Mapper">
+	
+	<select id="TB_USR_MST_VL001" parameterType="Map" resultType="TB_USR_MST_VO">
+ 		select DT.*
+		        from ( 
+		               SELECT  A.USR_NUM
+		                      ,A.LOGIN_ID
+		                      ,A.USR_NAME
+		                      ,A.USR_BIR_MD
+		                      ,A.INC_CD
+		                      ,A.APO_CD
+		                      ,A.USR_EMAIL
+		                      ,A.USR_TEL_NUM
+		                      ,B.TIM_NM
+		                      ,A.JOIN_YN
+		                      ,row_number() over() as ROW_NO 
+		                 FROM TB_USR_MST AS A
+		                 LEFT OUTER JOIN TB_TIM_MST AS B
+		                   ON A.TIM_NUM = B.TIM_NUM
+		                ORDER BY ROW_NO ASC
+		             ) as DT
+		  where DT.ROW_NO between #{start} and #{end};
+ 	</select>
+	
+</mapper>
