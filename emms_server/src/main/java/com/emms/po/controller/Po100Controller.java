@@ -65,6 +65,8 @@ public class Po100Controller {
 			System.out.println( getFile.length() );
 		}
 		
+		po100Service.prjBaseInfoInsert(request, paramVO);
+		
 		return ResponseEntity.ok(HttpStatus.OK);
 		
 	}

@@ -16,7 +16,6 @@ public class TB_PRJ_MST_VO implements Serializable {
 	private String prjNm;       //프로젝트명
 	private String prjDivCd;    //프로젝트구분코드
 	private String prjStsCd;    //프로젝트상태코드
-	private String prjPrd;      //프로젝트기간
 	private int    prjNom;      //프로젝트개월수
 	private String prjPlcNm;    //프로젝트장소명
 	private String prjRefCmt;   //프로젝트참조내용
