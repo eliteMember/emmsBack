@@ -33,6 +33,6 @@
 	   	<if test="startMdfDtm != null and startMdfDtm != ''"><![CDATA[and CRT_DTM >= STR_TO_DATE(#{startMdfDtm},'%Y%m%d %H%i%S')]]></if>
 	   	<if test="endMdfDtm != null and endMdfDtm != '' "><![CDATA[and CRT_DTM < STR_TO_DATE(#{endMdfDtm}+1,'%Y%m%d %H%i%S')]]></if>
 	   	<if test="mdfUsrNum != null and mdfUsrNum != ''"> and MDF_USR_NUM = #{mdfUsrNum}</if>
-	   order by PRJ_PRD, CRT_DTM
+	   order by CRT_DTM
  	</select>
 </mapper>
