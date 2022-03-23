@@ -23,7 +23,7 @@ public class TB_MEM_MST_VO implements Serializable {
 	private long   memFcst;     //인력원가
 	private String memCtt;      //인력연락처
 	private String memAdr;      //인력주소
-	private String affTimName;  //소속팀이름
+	private String timNum;		  //소속팀코드
 	private String affCoName;   //소속회사이름
 	private String usrNum;      //사용자번호
 	private Date   crtDtm;      //등록일시

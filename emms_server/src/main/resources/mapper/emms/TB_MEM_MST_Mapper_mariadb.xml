@@ -20,7 +20,7 @@
 			, MEM_FCST
 			, MEM_CTT
 			, MEM_ADR
-			, AFF_TIM_NAME
+			, TIM_NUM
 			, AFF_CO_NAME
 			, USR_NUM
 			, CRT_DTM
@@ -57,7 +57,7 @@
 			, MEM_FCST
 			, MEM_CTT
 			, MEM_ADR
-			, AFF_TIM_NAME
+			, TIM_NUM
 			, AFF_CO_NAME
 			, USR_NUM
 			, CRT_DTM
@@ -87,7 +87,7 @@
 			MEM_FCST,
 			MEM_CTT,
 			MEM_ADR,
-			AFF_TIM_NAME,
+			TIM_NUM,
 			AFF_CO_NAME,
 			USR_NUM,
 			CRT_DTM,
@@ -109,7 +109,7 @@
 			, #{memFcst}
 			, #{memCtt}
 			, #{memAdr}
-			, #{affTimName}
+			, #{timNum}
 			, #{affCoName}
 			, (SELECT USR_NUM FROM TB_USR_MST WHERE USR_NAME = #{memName} AND USR_BIR_MD = #{memBirMd})
 			, SYSDATE()

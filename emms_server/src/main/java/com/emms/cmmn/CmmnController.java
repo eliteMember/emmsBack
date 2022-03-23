@@ -11,7 +11,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.emms.cmmn.service.CmmnService;
@@ -70,7 +69,6 @@ public class CmmnController {
 	public ResponseEntity<Map<String, Object>> listTeam(
 			TB_TIM_MST_VO paramVO, 
 			HttpServletRequest request,
-			
 			ModelMap model) throws Exception {
 		
 		Map<String, Object> returnMap = new HashMap<String, Object>();
