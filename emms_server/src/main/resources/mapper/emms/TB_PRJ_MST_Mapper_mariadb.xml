@@ -6,11 +6,15 @@
 		select *
 		from TB_PRJ_MST
 	   where DEL_YN != 'Y'
+	   
+	   <!-- 공수관리용 조회 시 조건 -->
+	   	<if test="MHR != null and MHR != ''"> and (TIM_NUM is null or TIM_NUM = #{timNum})</if>
+	   
+	   <!-- 기본 조회조건 -->
 	   	<if test="prjNum != null and prjNum != ''"> and PRJ_NUM = #{prjNum}</if>
 	   	<if test="prjNm != null and prjNm != ''"> and PRJ_NM = #{prjNm}</if>
 	   	<if test="prjDivCd != null and prjDivCd != ''"> and PRJ_DIV_CD = #{prjDivCd}</if>
 	   	<if test="prjStsCd != null and prjStsCd != ''"> and PRJ_STS_CD = #{prjStsCd}</if>
-	   	<if test="prjPrd != null and prjPrd != ''"> and PRJ_PRD = #{prjPrd}</if>
 	   	<if test="prjNom != null and prjNom != ''"> and PRJ_NOM = #{prjNom}</if>
 	   	<if test="prjPlcNm != null and prjPlcNm != ''"> and PRJ_PLC_NM = #{prjPlcNm}</if>
 	   	<if test="prjRefCmt != null and prjRefCmt != ''"> and PRJ_REF_CMT = #{prjRefCmt}</if>
@@ -29,6 +33,56 @@
 	   	<if test="startMdfDtm != null and startMdfDtm != ''"><![CDATA[and CRT_DTM >= STR_TO_DATE(#{startMdfDtm},'%Y%m%d %H%i%S')]]></if>
 	   	<if test="endMdfDtm != null and endMdfDtm != '' "><![CDATA[and CRT_DTM < STR_TO_DATE(#{endMdfDtm}+1,'%Y%m%d %H%i%S')]]></if>
 	   	<if test="mdfUsrNum != null and mdfUsrNum != ''"> and MDF_USR_NUM = #{mdfUsrNum}</if>
-	   order by PRJ_PRD, CRT_DTM
+	   order by CRT_DTM
  	</select>
+ 	
+ 	<insert id="TB_PRJ_MST_EI001">
+ 		<selectKey keyProperty="prjNum" resultType="String" order="BEFORE">
+	      SELECT FN_GET_PRJ_NUM()
+	    </selectKey>
+ 		INSERT INTO TB_PRJ_MST
+ 		(
+ 			PRJ_NUM
+		  , PRJ_NM
+		  , PRJ_DIV_CD
+		  , PRJ_STS_CD
+		  , PRJ_NOM
+		  , PRJ_PLC_NM
+		  , PRJ_REF_CMT
+		  , TIM_NUM
+		  , DSC_PER
+		  , EST_AMT
+		  , PMT_MTD_CD
+		  , DEL_YN
+		  , CRT_DTM
+		  , CRT_USR_NUM
+		  , MDF_DTM
+		  , MDF_USR_NUM
+		  , PRJ_START_YM
+		  , PRJ_END_YM
+ 		)
+ 		VALUES
+ 		(
+ 			#{prjNum}
+		  , #{prjNm}
+		  , #{prjDivCd}
+		  , #{prjStsCd}
+		  , #{prjNom}
+		  , #{prjPlcNm}
+		  , #{prjRefCmt}
+		  , #{timNum}
+		  , #{dscPer}
+		  , #{estAmt}
+		  , #{pmtMtdCd}
+		  , #{delYn}
+		  , SYSDATE()
+		  , #{crtUsrNum}
+		  , SYSDATE()
+		  , #{mdfUsrNum}
+		  , #{prjStartYm}
+		  , #{prjEndYm}
+ 		)
+ 	</insert>
+ 	
+ 	
 </mapper>

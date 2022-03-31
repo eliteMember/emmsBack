@@ -3,6 +3,12 @@
 
 <mapper namespace="com.emms.mapper.TB_PRJ_MHR_MM_LST_Mapper">
 	
-	
+	<select id="TB_PRJ_MHR_MM_LST_PL001" parameterType="TB_PRJ_MHR_LST_VO"  resultType="TB_PRJ_MHR_MM_LST_VO" >
+		select *
+		  from TB_PRJ_MHR_MM_LST
+	     where PRJ_NUM 	  = #{prjNum}
+	       and MHR_KND_CD = #{mhrKndCd}
+	       and MEM_NUM    = #{memNum}
+ 	</select>
 	
 </mapper>

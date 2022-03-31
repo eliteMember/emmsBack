@@ -39,7 +39,11 @@
 		<typeAlias alias="TB_TIM_MST_VO" 			type="com.emms.vo.TB_TIM_MST_VO" />
 		<typeAlias alias="TB_USR_MST_VO" 			type="com.emms.vo.TB_USR_MST_VO" />
 		
-		<typeAlias alias="Me100_TB_MEM_MST_VO" 			type="com.emms.me.service.Me100_TB_MEM_MST_VO" />
+		<typeAlias alias="Me100_TB_MEM_MST_VO" 		type="com.emms.me.service.Me100_TB_MEM_MST_VO" />
+		
+		<typeAlias alias="WrkMcVo" 					type="com.emms.pm.service.WrkMcVo" />
+		<typeAlias alias="WrkScVo" 					type="com.emms.pm.service.WrkScVo" />
+		<typeAlias alias="MemVo" 					type="com.emms.pm.service.MemVo" />
 	</typeAliases>
 	
 </configuration>

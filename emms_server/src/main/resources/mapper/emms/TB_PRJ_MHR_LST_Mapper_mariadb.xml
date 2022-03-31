@@ -2,7 +2,63 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.emms.mapper.TB_PRJ_MHR_LST_Mapper">
-	
-	
-	
+	<select id="TB_PRJ_MHR_LST_PL001" parameterType="map"  resultType="TB_PRJ_MST_VO" >
+		select *
+		  from TB_PRJ_MHR_LST
+	     where PRJ_NUM = #{prjNum}
+	   
+	   <!-- 기본 조회조건 -->
+	   	<if test="mhrKndCd != null and mhrKndCd != ''"> and MHR_KND_CD = #{mhrKndCd}</if>
+	   	<if test="memNum != null and memNum != ''"> and MEM_NUM = #{memNum}</if>
+	   	<if test="wrkMcNm != null and wrkMcNm != ''"> and WRK_MC_NM = #{wrkMcNm}</if>
+	   	<if test="wrkScNm != null and wrkScNm != ''"> and WRK_SC_NM = #{wrkScNm}</if>
+	   	<if test="rolNm != null and rolNm != ''"> and ROL_NM = #{rolNm}</if>
+	  
+	   	<if test="startCrtDtm != null and startCrtDtm != ''"><![CDATA[and CRT_DTM >= STR_TO_DATE(#{startCrtDtm},'%Y%m%d %H%i%S')]]></if>
+	   	<if test="endCrtDtm != null and endCrtDtm != ''"><![CDATA[and CRT_DTM < STR_TO_DATE(#{endCrtDtm}+1,'%Y%m%d %H%i%S')]]></if>
+	   	<if test="crtUsrNum != null and crtUsrNum != ''"> and CRT_USR_NUM = #{crtUsrNum}</if>
+	   
+	   	<if test="startMdfDtm != null and startMdfDtm != ''"><![CDATA[and CRT_DTM >= STR_TO_DATE(#{startMdfDtm},'%Y%m%d %H%i%S')]]></if>
+	   	<if test="endMdfDtm != null and endMdfDtm != '' "><![CDATA[and CRT_DTM < STR_TO_DATE(#{endMdfDtm}+1,'%Y%m%d %H%i%S')]]></if>
+	   	<if test="mdfUsrNum != null and mdfUsrNum != ''"> and MDF_USR_NUM = #{mdfUsrNum}</if>
+	   order by SRT_ODR
+ 	</select>
+ 	
+ 	<select id="TB_PRJ_MHR_LST_PL002" parameterType="TB_PRJ_MHR_LST_VO"  resultType="WrkMcVo" >
+		select distinct WRK_MC_NM
+		  from TB_PRJ_MHR_LST
+	     where PRJ_NUM 	  = #{prjNum}
+	       and MHR_KND_CD = #{mhrKndCd}
+	     group by WRK_MC_NM
+	     order by SRT_ODR
+ 	</select>
+ 	
+ 	<select id="TB_PRJ_MHR_LST_PL003" parameterType="TB_PRJ_MHR_LST_VO"  resultType="WrkScVo" >
+		select distinct WRK_SC_NM
+		  from TB_PRJ_MHR_LST
+	     where PRJ_NUM 	  = #{prjNum}
+	       and MHR_KND_CD = #{mhrKndCd}
+	       and WRK_MC_NM  = #{wrkMcNm}
+	     group by WRK_SC_NM
+	     order by SRT_ODR
+ 	</select>
+ 	
+ 	<select id="TB_PRJ_MHR_LST_VL001" parameterType="TB_PRJ_MHR_LST_VO"  resultType="MemVo" >
+		select distinct mem.MEM_NAME
+			 , mhr.ROL_NM
+			 , mhr.MEM_NUM
+			 , mhr.MEM_RNK_CD
+			 , mhr.DEP_START_DT
+			 , mhr.DEP_END_DT
+			 , mhr.RMK
+			 , mhr.WRO_CPL_YN
+		  from TB_PRJ_MHR_LST mhr, TB_MEM_MST mem
+	     where mhr.PRJ_NUM 	  = #{prjNum}
+	       and mhr.MHR_KND_CD = #{mhrKndCd}
+	       and mhr.WRK_MC_NM  = #{wrkMcNm}
+	       and mhr.WRK_SC_NM  = #{wrkScNm}
+	       and mhr.MEM_NUM 	  = mem.MEM_NUM
+	       and mem.use_yn	  = 'Y'
+	     order by SRT_ODR
+ 	</select>
 </mapper>
