@@ -59,7 +59,6 @@ public class PaginationController {
 	public HashMap<String, Object> nextList(HttpServletRequest request,
 	@RequestBody Map<String,Object> paramMap) throws Exception{
 		
-//------처음 페이지에 뿌져줄 데이터 시작점과 보여주고 싶은 데이터갯수
 		Integer startNo = (Integer) paramMap.get("startNo");
 		Integer endNo = (Integer) paramMap.get("endNo");
 		Integer getCnt = (Integer) paramMap.get("getCnt");
