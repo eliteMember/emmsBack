@@ -1,3 +1,9 @@
+/**
+ * 실투입공수관리 화면 관련 컨트롤러
+ * @author : 오태윤
+ * @date   : 2022-03-28
+ */
+
 package com.emms.pm.controller;
 
 import java.util.ArrayList;
@@ -14,6 +20,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.emms.pm.service.Pm101Service;
+import com.emms.pm.service.WrkMcVo;
 import com.emms.vo.TB_PRJ_MST_VO;
 
 @RestController
@@ -23,11 +30,35 @@ public class Pm101Controller {
 	@Resource(name = "pm101Service")
 	private Pm101Service pm101Service;
 	
+	/**
+	 * 프로젝트 조회
+	 * @author : 오태윤
+	 * @date   : 2022-03-03
+	 * @return : List<TB_PRJ_MST_VO>
+	 * @throws Exception 
+	 */
 	@PostMapping(value = "/getPrjList")
 	public ResponseEntity<List<TB_PRJ_MST_VO>> listPrjMst(HttpServletRequest request, @RequestBody HashMap<String,String> paramMap) throws Exception {
 		
 		List<TB_PRJ_MST_VO> result = new ArrayList<TB_PRJ_MST_VO>();
 		result = pm101Service.listPrjMst(paramMap);
+		
+		return ResponseEntity.ok(result);
+		
+	}
+	
+	/**
+	 * 프로젝트 실투입공수 조회
+	 * @author : 오태윤
+	 * @date   : 2022-03-28
+	 * @return : List<WrkMcVo>
+	 * @throws Exception 
+	 */
+	@PostMapping(value = "/getMhrList")
+	public ResponseEntity<List<WrkMcVo>> listRealMhr(HttpServletRequest request, @RequestBody HashMap<String,String> paramMap) throws Exception {
+		
+		List<WrkMcVo> result = new ArrayList<WrkMcVo>();
+		result = pm101Service.listPrjMhr(paramMap.get("prjNum"));
 		
 		return ResponseEntity.ok(result);
 		
