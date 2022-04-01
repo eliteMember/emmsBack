@@ -5,11 +5,11 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 
-import com.emms.vo.TB_USR_MST_VO;
+import com.emms.mn.service.LoginVO;
 
 @Mapper
 public interface Pagination_Mapper {
 	
-	List<TB_USR_MST_VO> TB_USR_MST_VL001(HashMap<String, Integer> map);
+	List<LoginVO> TB_USR_MST_VL001(HashMap<String, Integer> map);
 	
 }

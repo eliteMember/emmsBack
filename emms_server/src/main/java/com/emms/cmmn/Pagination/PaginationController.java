@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.emms.vo.TB_USR_MST_VO;
+import com.emms.mn.service.LoginVO;
 
 @RestController
 @RequestMapping("/api/pagination")
@@ -32,7 +32,7 @@ public class PaginationController {
 		update.put("start", PNo);
 		update.put("end", getCnt);
 		HashMap<String, Object> result = new HashMap<String, Object>();
-		List<TB_USR_MST_VO> firstPage = paginationService.selectList(update);
+		List<LoginVO> firstPage = paginationService.selectList(update);
 		System.out.println(firstPage);
 		result.put("USR", firstPage);
 //-----------------------------------------------------------------
@@ -42,7 +42,7 @@ public class PaginationController {
 		Integer endNo = startNo + getCnt - 1;
 		update.put("start", startNo);
 		update.put("end", endNo);
-		List<TB_USR_MST_VO> nextPage = paginationService.selectList(update);
+		List<LoginVO> nextPage = paginationService.selectList(update);
 		if(nextPage.size() != 0) {
 			result.put("nextYn", 'Y');
 			result.put("nextUSR", nextPage);
@@ -66,7 +66,7 @@ public class PaginationController {
 		update.put("start", (startNo + getCnt));
 		update.put("end", ( endNo+getCnt) );
 		HashMap<String, Object> result = new HashMap<String, Object>();
-		List<TB_USR_MST_VO> nextPage = paginationService.selectList(update);
+		List<LoginVO> nextPage = paginationService.selectList(update);
 		System.out.println(nextPage);
 		if(nextPage.size() != 0) {
 			result.put("nextYn", 'Y');

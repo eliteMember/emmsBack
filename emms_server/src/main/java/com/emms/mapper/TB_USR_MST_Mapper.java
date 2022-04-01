@@ -19,4 +19,6 @@ public interface TB_USR_MST_Mapper {
 	void TB_USR_MST_PU002(HashMap<String, String> map);
 	
 	String TB_USR_MST_PS002();
+	
+	List<LoginVO> TB_USR_MST_PS003(String usrNum);
 }

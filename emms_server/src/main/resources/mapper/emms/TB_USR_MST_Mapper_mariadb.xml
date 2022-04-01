@@ -42,5 +42,25 @@
  	<select id="TB_USR_MST_PS002" resultType="String">
  		select count(*) from TB_USR_MST
  	</select>
+ 	
+ 	<select id="TB_USR_MST_PS003" parameterType="String" resultType="LoginVO">
+ 		SELECT  A.USR_NUM
+		       ,A.USR_NAME
+		       ,A.USR_BIR_MD
+		       ,A.USR_EMAIL
+		       ,A.USR_TEL_NUM
+		       ,A.USR_ADR
+		       ,A.INC_CD
+		       ,A.APO_CD
+		       ,A.EDU_CD
+		       ,A.TIM_NUM
+		       ,B.TIM_NM
+		       ,A.JOIN_YN
+		       ,A.DEL_YN
+		  FROM TB_USR_MST AS A
+		  LEFT OUTER JOIN TB_TIM_MST AS B
+		  	ON A.TIM_NUM = B.TIM_NUM
+		 WHERE USR_NUM = #{usrNum}
+ 	</select>
 	
 </mapper>

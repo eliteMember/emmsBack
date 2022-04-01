@@ -32,4 +32,11 @@ public class Mn400Service {
 		
 		return totalCnt;
 	}
+	
+	public List<LoginVO> targetData(String usrNum) throws Exception {
+		
+		List<LoginVO> loginVO = tb_usr_mst_mapper.TB_USR_MST_PS003(usrNum);
+
+		return loginVO;
+	}
 }

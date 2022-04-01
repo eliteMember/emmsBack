@@ -3,7 +3,7 @@
 
 <mapper namespace="com.emms.mapper.Pagination_Mapper">
 	
-	<select id="TB_USR_MST_VL001" parameterType="Map" resultType="TB_USR_MST_VO">
+	<select id="TB_USR_MST_VL001" parameterType="Map" resultType="LoginVO">
  		select DT.*
 		        from ( 
 		               SELECT  A.USR_NUM

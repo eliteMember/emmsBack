@@ -7,6 +7,8 @@ import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -14,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.emms.mapper.TB_USR_MST_Mapper;
+import com.emms.mn.service.LoginVO;
 import com.emms.mn.service.Mn400Service;
 import com.emms.vo.TB_USR_MST_VO;
 
@@ -55,4 +58,19 @@ public class Mn400Controller {
 		
 		return null;
 	}
+	
+	@PostMapping("/targetData")
+	public ResponseEntity<Map<String,List<LoginVO>>> getMemTargetData(
+			HttpServletRequest request,
+			@RequestBody Map<String,String> paramMap,
+			ModelMap model) throws Exception {
+		System.out.println("여기왔음");
+		Map<String,List<LoginVO>> returnData = new HashMap<String,List<LoginVO>>();
+		returnData.put("value", mn400Service.targetData(paramMap.get("usrNum")));
+		System.out.println(returnData);
+		
+		return ResponseEntity.ok(returnData);
+		
+	}
+	
 }
