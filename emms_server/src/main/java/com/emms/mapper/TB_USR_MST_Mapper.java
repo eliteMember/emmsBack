@@ -21,4 +21,11 @@ public interface TB_USR_MST_Mapper {
 	String TB_USR_MST_PS002();
 	
 	List<LoginVO> TB_USR_MST_PS003(String usrNum);
+	
+	public Integer TB_USR_MST_PI001(HashMap<String, String> map);
+	
+	public Integer TB_USR_MST_PU003(HashMap<String, String> map);
+	
+	List<LoginVO> TB_USR_MST_PL001(String usrName);
+	
 }

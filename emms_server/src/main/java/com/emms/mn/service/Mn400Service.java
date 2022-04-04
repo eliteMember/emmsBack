@@ -39,4 +39,25 @@ public class Mn400Service {
 
 		return loginVO;
 	}
+	
+	public Integer insertUsrData(HashMap<String , String> map) throws Exception{
+		
+		int returnNum = tb_usr_mst_mapper.TB_USR_MST_PI001(map);
+		
+		return returnNum;
+	}
+	
+	public Integer updateUsrData(HashMap<String , String> map) throws Exception{
+		
+		int returnNum = tb_usr_mst_mapper.TB_USR_MST_PU003(map);
+		
+		return returnNum;
+	}
+	
+	public List<LoginVO> searchName(String usrName) throws Exception {
+		
+		List<LoginVO> loginVO = tb_usr_mst_mapper.TB_USR_MST_PL001(usrName);
+
+		return loginVO;
+	}
 }

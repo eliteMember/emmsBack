@@ -62,5 +62,73 @@
 		  	ON A.TIM_NUM = B.TIM_NUM
 		 WHERE USR_NUM = #{usrNum}
  	</select>
+ 	
+ 	<insert id="TB_USR_MST_PI001" parameterType="Map">
+ 		INSERT INTO TB_USR_MST
+ 		(
+ 			USR_NUM,
+ 			USR_NAME,
+ 			USR_BIR_MD,
+ 			USR_EMAIL,
+ 			USR_TEL_NUM,
+ 			INC_CD,
+ 			APO_CD,
+ 			TIM_NUM,
+ 			JOIN_YN,
+ 			DEL_YN,
+ 			CRT_DTM,
+ 			CRT_USR_NUM
+ 		) values (
+ 			<if test=" memNum == null or memNum == '' ">(SELECT FN_GET_USR_NUM())</if>
+ 			, #{usrName}
+ 			, #{usrBirMd}
+ 			, #{usrEmail}
+ 			, #{usrTelNum}
+ 			, #{incCd}
+ 			, #{apoCd}
+ 			, #{timNum}
+ 			, 'N'
+ 			, 'N'
+ 			, SYSDATE()
+ 			, #{masterNum}
+ 		)
+ 	</insert>
+ 	
+ 	<update id="TB_USR_MST_PU003" parameterType="Map">
+ 		UPDATE TB_USR_MST
+ 			SET USR_NAME = #{usrName},
+ 				USR_BIR_MD = #{usrBirMd},
+ 				USR_EMAIL = #{usrEmail},
+ 				USR_TEL_NUM = #{usrTelNum},
+ 				INC_CD = #{incCd},
+ 				APO_CD = #{apoCd},
+ 				TIM_NUM = #{timNum},
+ 				MDF_DTM = SYSDATE(),
+ 				MDF_USR_NUM = #{masterNum}
+ 			WHERE 1 = 1
+ 				AND USR_NUM = #{usrNum}
+ 	</update>
+ 	
+ 	<select id="TB_USR_MST_PL001" parameterType="String" resultType="LoginVO">
+ 		SELECT  A.USR_NUM
+		       ,A.USR_NAME
+		       ,A.USR_BIR_MD
+		       ,A.USR_EMAIL
+		       ,A.USR_TEL_NUM
+		       ,A.USR_ADR
+		       ,A.INC_CD
+		       ,A.APO_CD
+		       ,A.EDU_CD
+		       ,A.TIM_NUM
+		       ,B.TIM_NM
+		       ,A.LOGIN_ID
+		       ,A.JOIN_YN
+		       ,A.DEL_YN
+		FROM TB_USR_MST AS A
+		LEFT OUTER JOIN TB_TIM_MST AS B
+			ON A.TIM_NUM = B.TIM_NUM
+		WHERE 1 = 1
+		 	AND USR_NAME LIKE CONCAT('%',#{usrName},'%')
+ 	</select>
 	
 </mapper>
