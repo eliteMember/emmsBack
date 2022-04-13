@@ -17,6 +17,25 @@
 		from tb_cd_lst
 	</select>
 	
+	<!-- 직위 리스트 -->
+	<select id="TB_CD_LST_PL003" resultType="TB_CD_LST_VO">
+		select CD_VAL
+		     , CD_NM
+		  from tb_cd_lst
+		 where CD_DIV_VAL = 'INC_CD'
+		   and CD_VAL LIKE '1%'
+		   and CD_VAL != '0'
+		 order by CD_VAL
+	</select>
 	
+	<!-- 직책 리스트 -->
+	<select id="TB_CD_LST_PL004" resultType="TB_CD_LST_VO">
+		select CD_VAL
+		     , CD_NM
+		  from tb_cd_lst
+		 where CD_DIV_VAL = 'APO_CD'
+		   and CD_VAL != '0'
+		 order by CD_VAL
+	</select>
 	
 </mapper>

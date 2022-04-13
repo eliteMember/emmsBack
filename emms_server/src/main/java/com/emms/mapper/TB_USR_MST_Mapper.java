@@ -28,4 +28,15 @@ public interface TB_USR_MST_Mapper {
 	
 	List<LoginVO> TB_USR_MST_PL001(String usrName);
 	
+	// 회원가입 등록
+	public void TB_USR_MST_PI002(TB_USR_MST_VO member);
+	
+	// 아이디 중복 체크
+	List<TB_USR_MST_VO> TB_USR_MST_PS004(String val); 
+	
+	List<TB_USR_MST_VO> TB_USR_MST_PS006(); 
+	
+	// 등록확인 체크
+	public Integer TB_USR_MST_PS005(HashMap<String, String> map);
+	
 }

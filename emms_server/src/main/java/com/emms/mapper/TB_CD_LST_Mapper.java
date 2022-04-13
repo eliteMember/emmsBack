@@ -16,4 +16,10 @@ public interface TB_CD_LST_Mapper {
 	List<TB_CD_LST_VO> TB_CD_LST_PL001(String val);
 	
 	List<TB_CD_LST_VO> TB_CD_LST_PL002();
+	
+	// 직책 코드 select
+	public List<TB_CD_LST_VO> TB_CD_LST_PL003(TB_CD_LST_VO paramVO) throws Exception;
+	
+	// 직위 코드 select
+	public List<TB_CD_LST_VO> TB_CD_LST_PL004(TB_CD_LST_VO paramVO) throws Exception;
 }
