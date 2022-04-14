@@ -84,5 +84,29 @@
  		)
  	</insert>
  	
+ 	<select id="TB_PRJ_MST_PL002" resultType="TB_PRJ_MST_VO">
+		SELECT
+			  PRJ_NUM
+			, PRJ_NM
+			, PRJ_DIV_CD
+			, PRJ_STS_CD
+			, PRJ_NOM
+			, PRJ_PLC_NM
+			, PRJ_REF_CMT
+			, PRJ_START_YM
+			, PRJ_END_YM
+			, TIM_NUM
+			, DSC_PER
+			, EST_AMT
+			, PMT_MTD_CD
+			, DEL_YN
+			, CRT_DTM
+			, CRT_USR_NUM
+			, MDF_DTM
+			, MDF_USR_NUM
+		FROM TB_PRJ_MST X
+		WHERE 1 = 1
+	</select>
+ 	
  	
 </mapper>

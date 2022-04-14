@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.emms.cmmn.service.CmmnService;
+import com.emms.vo.TB_PRJ_MST_VO;
 import com.emms.vo.TB_TIM_MST_VO;
 
 @RestController
@@ -74,6 +75,20 @@ public class CmmnController {
 		Map<String, Object> returnMap = new HashMap<String, Object>();
 		
 		List<TB_TIM_MST_VO> list = cmmnService.listTeam(paramVO);
+		returnMap.put("list", list);
+		
+		return ResponseEntity.ok(returnMap);
+	}
+	
+	@GetMapping(value = "/api/cmmn/listProject")
+	public ResponseEntity<Map<String, Object>> listProject(
+			TB_PRJ_MST_VO paramVO, 
+			HttpServletRequest request,
+			ModelMap model) throws Exception {
+		
+		Map<String, Object> returnMap = new HashMap<String, Object>();
+		
+		List<TB_PRJ_MST_VO> list = cmmnService.listProject(paramVO);
 		returnMap.put("list", list);
 		
 		return ResponseEntity.ok(returnMap);
