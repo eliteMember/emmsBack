@@ -1,5 +1,6 @@
 package com.emms.cmmn;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -16,6 +17,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.emms.cmmn.service.CmmnService;
 import com.emms.vo.TB_PRJ_MST_VO;
 import com.emms.vo.TB_TIM_MST_VO;
+
+import lombok.val;
 
 @RestController
 public class CmmnController {
@@ -89,7 +92,16 @@ public class CmmnController {
 		Map<String, Object> returnMap = new HashMap<String, Object>();
 		
 		List<TB_PRJ_MST_VO> list = cmmnService.listProject(paramVO);
+		List<Map<String, String>> test = new ArrayList<Map<String, String>>();
+		
+		for(int i = 0; i < list.size(); i++) {
+			Map<String, String> test3 = new HashMap<String, String>();
+			test3.put("value",list.get(i).getPrjNum());
+			test3.put("label",list.get(i).getPrjNm());
+			test.add(test3);
+		}
 		returnMap.put("list", list);
+		returnMap.put("option", test);
 		
 		return ResponseEntity.ok(returnMap);
 	}
