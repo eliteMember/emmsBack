@@ -131,8 +131,11 @@
 		 	AND USR_NAME LIKE CONCAT('%',#{usrName},'%')
  	</select>
  	
- 	<!-- 회원가입 -->
- 	<insert id="TB_USR_MST_PI002" parameterType="TB_USR_MST_VO">
+ 	<!-- 
+ 		회원가입
+ 	 -->
+ 	<!-- 회원가입(신규) -->
+ 	<insert id="TB_USR_MST_PI002" parameterType="Map">
  		INSERT INTO tb_usr_mst
  		(
  			USR_NUM
@@ -140,64 +143,90 @@
  		  , USR_BIR_MD
  		  , USR_EMAIL
  		  , USR_TEL_NUM
- 		  , USR_ADR
  		  , INC_CD
  		  , APO_CD
- 		  , EDU_CD
  		  , TIM_NUM
  		  , LOGIN_ID
  		  , PASS_NUM
  		  , JOIN_YN
  		  , DEL_YN
- 		  , RMK
  		  , CRT_DTM
  		  , CRT_USR_NUM
- 		  , MDF_DTM
- 		  , MDF_USR_NUM
  		)
  		VALUES
  		(
- 		    "U220200032"
- 		  , #{usrName}
- 		  , #{usrBirMd}
- 		  , #{usrEmail}
- 		  , #{usrTelNum}
- 		  , #{usrAdr}
- 		  , #{incCd}
- 		  , #{apoCd}
- 		  , "0"
- 		  , "T031010001"
- 		  , #{loginId}
- 		  , #{passNum}
+ 		    <if test=" memNum == null or memNum == '' ">(SELECT FN_GET_USR_NUM())</if>
+ 		  , #{userName}
+ 		  , #{userBirth}
+ 		  , #{userEmail}
+ 		  , #{usePhoneNum}
+ 		  , #{userIncCd}
+ 		  , #{userApoCd}
+ 		  , ( select TIM_NUM from tb_tim_mst where TIM_NM = #{userTimName} )
+ 		  , #{userId}
+ 		  , #{userPw}
  		  , "Y"
  		  , "N"
- 		  , "비고"
  		  , SYSDATE()
- 		  , "U220200032"
- 		  , SYSDATE()
- 		  , "U220200032"
+ 		  , 'S000000001'
  		);
  	</insert>
  	
- 	<!-- 아이디중복 체크 -->
-	<select id="TB_USR_MST_PS006" parameterType="String" resultType="TB_USR_MST_VO">
-		select LOGIN_ID
-		  from tb_usr_mst
-	</select>
-	
- 	<!-- 아이디중복 체크 -->
-	<select id="TB_USR_MST_PS004" parameterType="String" resultType="TB_USR_MST_VO">
-		select LOGIN_ID
-		  from tb_usr_mst
-		 where JOIN_YN = 'Y'
-	</select>
-	
-	<!-- 회원가입시 이름 생년월일 체크 -->
-	<select id="TB_USR_MST_PS005" resultType="int">
-		SELECT count(*)
-		  FROM TB_USR_MST 
+ 	<!-- 회원가입(update) -->
+ 	<update id="TB_USR_MST_PU004" parameterType="Map">
+ 		UPDATE TB_USR_MST
+ 			SET USR_NAME = #{userName},
+ 				USR_BIR_MD = #{userBirth},
+ 				USR_EMAIL = #{userEmail},
+ 				USR_TEL_NUM = #{usePhoneNum},
+ 				INC_CD = #{userIncCd},
+ 				APO_CD = #{userApoCd},
+ 				TIM_NUM = ( select TIM_NUM from tb_tim_mst where TIM_NM = #{userTimName} ),
+ 				LOGIN_ID = #{userId},
+ 		  		PASS_NUM = #{userPw},
+ 		  		JOIN_YN = 'Y',
+ 		  		DEL_YN = 'N',
+ 				MDF_DTM = SYSDATE(),
+ 				MDF_USR_NUM = #{userNum}
+ 			WHERE 1 = 1
+ 				AND USR_NUM = #{userNum}
+ 	</update>
+ 	
+ 	<select id="TB_USR_MST_PS009" resultType="LoginVO">
+ 		SELECT *
+ 		  FROM TB_USR_MST AS A
+	      LEFT OUTER JOIN TB_TIM_MST AS B
+		  	ON A.TIM_NUM = B.TIM_NUM
 		 WHERE USR_NAME = #{usrName}
-		   AND USR_BIR_MD = #{usrBirth} 
+		   AND USR_BIR_MD = #{usrBirth}
+ 	</select>
+ 	
+ 	<!-- 아이디중복 체크 -->
+	<select id="TB_USR_MST_PS004" resultType="int">
+		select count(*)
+		  from TB_USR_MST 
+		 where LOGIN_ID = #{loginId}
+		   and USR_NUM != #{userNum}
+	</select>
+	
+	<!-- 
+		회원 수정
+	 -->
+	 
+	<!-- 회원정보 가져오기 -->
+	<select id="TB_USR_MST_PS010" resultType="LoginVO">
+ 		SELECT *
+ 		  FROM TB_USR_MST AS A
+	      LEFT OUTER JOIN TB_TIM_MST AS B
+		  	ON A.TIM_NUM = B.TIM_NUM
+		 WHERE USR_NUM = #{usrNum}
  	</select>
 	
+	<!-- 비밀번호 확인하기 -->
+	<select id="TB_USR_MST_PS011" resultType="int">
+	    select count(*)
+		  from TB_USR_MST 
+		 where LOGIN_ID = #{loginId}
+		   and PASS_NUM = #{loginPw}
+	</select>
 </mapper>

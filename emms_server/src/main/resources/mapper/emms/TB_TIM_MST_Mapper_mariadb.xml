@@ -15,4 +15,54 @@
 		WHERE 1 = 1
 	</select>
 	
+	<!-- 데이터 팀명으로 비교 -->
+	<select id="TB_TIM_MST_PS001" resultType="TB_TIM_MST_VO">
+ 		SELECT *
+ 		  FROM TB_TIM_MST
+		 WHERE TIM_NM = #{userTimName}
+ 	</select>
+ 	
+ 	<!-- 팀명 insert -->
+ 	<insert id="TB_TIM_MST_PI001" parameterType="Map">
+ 		INSERT INTO tb_tim_mst 
+		(
+			  TIM_NUM
+			, TIM_NM
+			, CRT_DTM
+			, CRT_USR_NUM
+		)
+		VALUES 
+		(
+			  <if test=" memNum == null or memNum == '' ">(SELECT FN_GET_TIM_NUM())</if>
+			, #{userTimName}
+			, SYSDATE()
+			, 'S000009001'
+		);
+	</insert>
+	
+	<!-- 데이터 팀명으로 비교 -->
+	<select id="TB_TIM_MST_PS002" resultType="TB_TIM_MST_VO">
+ 		SELECT *
+ 		  FROM TB_TIM_MST
+		 WHERE TIM_NM = #{teamNm}
+ 	</select>
+ 	
+ 	<!-- 팀명 insert -->
+ 	<insert id="TB_TIM_MST_PI002" parameterType="Map">
+ 		INSERT INTO tb_tim_mst 
+		(
+			  TIM_NUM
+			, TIM_NM
+			, CRT_DTM
+			, CRT_USR_NUM
+		)
+		VALUES 
+		(
+			  <if test=" memNum == null or memNum == '' ">(SELECT FN_GET_TIM_NUM())</if>
+			, #{teamNm}
+			, SYSDATE()
+			, 'S000009001'
+		);
+	</insert>
+	
 </mapper>
