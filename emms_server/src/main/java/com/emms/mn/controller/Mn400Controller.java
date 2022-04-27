@@ -36,7 +36,6 @@ public class Mn400Controller {
 	@RequestBody Map<String,String> paramMap) throws Exception{
 		
 		HttpSession session = request.getSession();
-		System.out.println(session);
 		String crtUsrNum = null;
 		SessionVO sessionVO = (SessionVO) session.getAttribute("sessionVO");
 		if  ( null != session ) { crtUsrNum = sessionVO.getLoginVO().getUsrNum();}
@@ -49,7 +48,6 @@ public class Mn400Controller {
 		String usrEmail = paramMap.get("usrEmail");
 		String usrTelNum = paramMap.get("usrTelNum");
 		String timNum = paramMap.get("timNum");
-		System.out.println(usrNum);
 		HashMap<String, String> newdata = new HashMap<String,String>();
 		newdata.put("usrNum", usrNum);
 		newdata.put("usrName", usrName);
@@ -63,13 +61,10 @@ public class Mn400Controller {
 		
 		Map<String,Object> returnData = new HashMap<String,Object>();
 		if(usrNum == "") {
-			System.out.println("usrNum = null 일때" + newdata);
 			returnData.put("result",mn400Service.insertUsrData(newdata));
 		}else if(usrNum != "") {
-			System.out.println("usrNum = null이 아닐때" + newdata);
 			returnData.put("result",mn400Service.updateUsrData(newdata));
 		}
-		System.out.println("넘어온값"+returnData);
 		return ResponseEntity.ok(returnData);
 	}
 	
@@ -93,7 +88,6 @@ public class Mn400Controller {
 			ModelMap model) throws Exception {
 		Map<String,List<LoginVO>> returnData = new HashMap<String,List<LoginVO>>();
 		returnData.put("value", mn400Service.targetData(paramMap.get("usrNum")));
-		System.out.println(returnData);
 		
 		return ResponseEntity.ok(returnData);
 		
@@ -107,7 +101,6 @@ public class Mn400Controller {
 			ModelMap model) throws Exception {
 		Map<String,List<LoginVO>> returnData = new HashMap<String,List<LoginVO>>();
 		returnData.put("value", mn400Service.searchName(paramMap.get("usrName")));
-		System.out.println(returnData);
 		
 		return ResponseEntity.ok(returnData);
 		

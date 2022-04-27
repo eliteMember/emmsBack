@@ -33,7 +33,6 @@ public class PaginationController {
 		update.put("end", getCnt);
 		HashMap<String, Object> result = new HashMap<String, Object>();
 		List<LoginVO> firstPage = paginationService.selectList(update);
-		System.out.println(firstPage);
 		result.put("USR", firstPage);
 //-----------------------------------------------------------------
 //------두번째 페이지 여부, 두번째 페이지 데이터 적재
@@ -67,7 +66,6 @@ public class PaginationController {
 		update.put("end", ( endNo+getCnt) );
 		HashMap<String, Object> result = new HashMap<String, Object>();
 		List<LoginVO> nextPage = paginationService.selectList(update);
-		System.out.println(nextPage);
 		if(nextPage.size() != 0) {
 			result.put("nextYn", 'Y');
 			result.put("nextUSR", nextPage);
