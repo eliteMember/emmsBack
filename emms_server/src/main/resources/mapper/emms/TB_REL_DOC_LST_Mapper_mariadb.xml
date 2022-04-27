@@ -20,5 +20,35 @@
  	   WHERE PRJ_NUM = #{prjNum}
  		ORDER BY A.USR_NUM DESC
  	</select>
+ 	
+ 	<select id="TB_REL_DOC_LST_PL002" parameterType="hmap" resultType="Do101_TB_REL_DOC_LST_VO">
+ 		SELECT  A.PRJ_NUM
+				, A.REL_DOC_NUM
+				, A.DOC_CLS_CD
+				, A.FIL_NM
+				, A.FIL_PTH
+				, A.ORG_FIL_NM
+			 	, A.FIL_SIZ
+				, A.FIL_EXT
+			 	, A.CRT_DTM
+			 	, A.CRT_USR_NUM
+			 	, C.USR_NAME
+			 	, A.MDF_DTM
+			 	, A.MDF_USR_NUM
+			 	, B.PRJ_NM 
+		FROM TB_REL_DOC_LST AS A
+	   INNER JOIN TB_PRJ_MST AS B
+		  ON A.PRJ_NUM = B.PRJ_NUM
+	   INNER JOIN TB_USR_MST AS C
+		  ON A.CRT_USR_NUM = C.USR_NUM
+		WHERE 	1=1
+		<if test="prjNum != null and prjNum != ''">AND A.PRJ_NUM IN (${prjNum})</if>
+		<if test="docClsCd != null and docClsCd != ''">AND A.DOC_CLS_CD IN (${docClsCd})</if>
+		<if test="startDate != null and startDate != '' and endDate != null and endDate != ''">
+													AND A.CRT_DTM BETWEEN #{startDate} AND #{endDate}</if>
+		<if test="crtUsrNum != null and crtUsrNum != ''">AND C.USR_NAME LIKE CONCAT('%', #{crtUsrNum}, '%')</if>
+		<if test="filNm != null and filNm != ''">AND A.FIL_NM LIKE CONCAT('%', #{filNm}, '%')</if>
+		ORDER BY  PRJ_NUM
+ 	</select>
 	
 </mapper>

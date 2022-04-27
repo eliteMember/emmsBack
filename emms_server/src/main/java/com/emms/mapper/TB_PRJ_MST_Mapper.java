@@ -15,4 +15,6 @@ public interface TB_PRJ_MST_Mapper {
 	
 	//프로젝트 기본정보 등록
 	int TB_PRJ_MST_EI001( TB_PRJ_MST_VO paramVO );
+
+	public List<TB_PRJ_MST_VO> TB_PRJ_MST_PL002(TB_PRJ_MST_VO paramVO) throws Exception;
 }

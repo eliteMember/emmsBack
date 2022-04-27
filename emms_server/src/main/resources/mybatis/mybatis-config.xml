@@ -40,7 +40,6 @@
 		<typeAlias alias="LoginVO" 			type="com.emms.mn.service.LoginVO" />
 		<typeAlias alias="Me100_TB_MEM_MST_VO" 		type="com.emms.me.service.Me100_TB_MEM_MST_VO" />
 		<typeAlias alias="Do101_TB_REL_DOC_LST_VO" 	type="com.emms.doc.service.Do101_TB_REL_DOC_LST_VO"/>
-		<typeAlias alias="Do101_TB_REL_DOC_LST_VO" 	type="com.emms.doc.service.Do101_TB_REL_DOC_LST_VO"/>
 		<typeAlias alias="WrkMcVo" 					type="com.emms.pm.service.WrkMcVo" />
 		<typeAlias alias="WrkScVo" 					type="com.emms.pm.service.WrkScVo" />
 		<typeAlias alias="MemVo" 					type="com.emms.pm.service.MemVo" />
