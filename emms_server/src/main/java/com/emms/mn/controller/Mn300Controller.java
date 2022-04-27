@@ -86,13 +86,9 @@ public class Mn300Controller {
 		data.put("loginId", loginId);
 		data.put("loginPw", loginPw);
 		
-		System.out.println("id : " + loginId);
-		System.out.println("existPw : " + loginPw);
 		
 		int chkPw = mn300Service.chkPw(data);
 		
-		System.out.println(data);
-		System.out.println(chkPw);
 		returnData.put("chkPw", chkPw);
 		
 		return ResponseEntity.ok(returnData);
@@ -117,11 +113,9 @@ public class Mn300Controller {
 		
 		data.put("teamNm", teamNm);
 		
-		System.out.println("teamNm : " + teamNm);
 		
 		TB_TIM_MST_VO checkTeamName = mn300Service.existTeamName(data);
 		
-		System.out.println("data : " + data);
 		
 		HashMap<String, String> newData = new HashMap<String,String>();
 		
@@ -130,12 +124,9 @@ public class Mn300Controller {
 			if (checkTeamName == null) {
 				// insert
 				
-				System.out.println("-------------------------------");
-				System.out.println("teamNm : " + teamNm);
 				
 				newData.put("teamNm", 	teamNm);
 				
-				System.out.println("checkTeamName = null 일때 : " + newData);
 				returnData.put("result",mn300Service.insertTeam(newData));
 				
 			}
@@ -178,22 +169,8 @@ public class Mn300Controller {
 		
 		HashMap<String, String> newData = new HashMap<String,String>();
 		
-		System.out.println("-------------------------------");
-		System.out.println("num : " 	+ num);
-		System.out.println("name : " 	+ name);
-		System.out.println("id : "	+ id);
-		System.out.println("existPw : " + existPw);
-		System.out.println("pw : " 	+ pw);
-		System.out.println("pwChk : " 	+ pwChk);
-		System.out.println("birMd : " 	+ birMd);
-		System.out.println("ctt : " 		+ ctt);
-		System.out.println("email : " 		+ email);
-		System.out.println("incCd : " 		+ incCd);
-		System.out.println("apoCd : " 		+ apoCd);
-		System.out.println("teamNm : " 		+ teamNm);
 	
 		
-		System.out.println("join 진입");
 		
 		newData.put("userNum", num);
 		newData.put("userName", name);
@@ -207,9 +184,7 @@ public class Mn300Controller {
 		newData.put("userTimName", teamNm);
 		
 		Map<String,Object> returnData = new HashMap<String,Object>();
-		System.out.println("usrNum = null 이 아닐때 : " + newData);
 		returnData.put("result",mn300Service.updateMember(newData));
-		System.out.println("넘어온값"+returnData);
 		return ResponseEntity.ok(returnData);
 	}
 	

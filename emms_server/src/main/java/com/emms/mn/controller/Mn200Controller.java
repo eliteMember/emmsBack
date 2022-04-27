@@ -70,17 +70,14 @@ public class Mn200Controller {
 		
 		// 유저정보가 DB에 없다면 신규가입
 		if (userInfo == null) {
-			System.out.println("신규가입");
 		}
 		// 유저정보가 DB에 있다면
 		else {
 			// 가입여부가 N이면
 			if ("N".equals(userInfo.getJoinYn()) ) {
-				System.out.println("가입이 되어있지 않은 유저");
 			}
 			// 가입여부가 Y이면
 			else {
-				System.out.println("가입이 된 유저");
 			}
 			
 		}
@@ -110,12 +107,9 @@ public class Mn200Controller {
 		data.put("loginId", loginId);
 		data.put("userNum", userNum);
 		
-		System.out.println("loginId : " + loginId);
-		System.out.println("userNum : " + userNum);
 		
 		int checkId = mn200Service.selectChild(data);
 		
-		System.out.println(data);
 		
 		returnData.put("checkId", checkId);
 		
@@ -145,7 +139,6 @@ public class Mn200Controller {
 		
 		TB_TIM_MST_VO checkTeamName = mn200Service.existTeamName(data);
 		
-		System.out.println("data : " + data);
 		
 		HashMap<String, String> newData = new HashMap<String,String>();
 		
@@ -154,12 +147,9 @@ public class Mn200Controller {
 			if (checkTeamName == null) {
 				// insert
 				
-				System.out.println("-------------------------------");
-				System.out.println("userTimName : " + timNm);
 				
 				newData.put("userTimName", 	timNm);
 				
-				System.out.println("checkTeamName = null 일때 : " + newData);
 				returnData.put("result",mn200Service.insertTeam(newData));
 				
 			}
@@ -189,7 +179,6 @@ public class Mn200Controller {
 
 		returnMap.put("list", list);
 		
-		System.out.println("resultINC : "+returnMap);
 		return ResponseEntity.ok(returnMap);
 
 	}
@@ -213,7 +202,6 @@ public class Mn200Controller {
 
 		returnMap.put("list", list);
 		
-		System.out.println("resultAPO : "+returnMap);
 		return ResponseEntity.ok(returnMap);
 
 	}
@@ -247,18 +235,6 @@ public class Mn200Controller {
 		
 		HashMap<String, String> newData = new HashMap<String,String>();
 		
-		System.out.println("-------------------------------");
-		System.out.println("userName 	: " + usrName);
-		System.out.println("userBirth 	: "	+ usrBirMd);
-		System.out.println("usePhoneNum : " + usrTelNum);
-		System.out.println("userId 		: " + loginId);
-		System.out.println("userPw 		: " + passNum);
-		System.out.println("userEmail1 	: " + usrEmail);
-		System.out.println("userIncCd 	: " + incCd);
-		System.out.println("userApoCd 	: " + apoCd);
-		System.out.println("userTimName : " + timNum);
-	
-		System.out.println("join 진입");
 		
 		newData.put("userName", 	usrName);
 		newData.put("userBirth", 	usrBirMd);
@@ -271,9 +247,7 @@ public class Mn200Controller {
 		newData.put("userTimName", 	timNum);
 		
 		Map<String,Object> returnData = new HashMap<String,Object>();
-		System.out.println("usrNum = null 일때 : " + newData);
 		returnData.put("result",mn200Service.insertMember(newData));
-		System.out.println("넘어온값"+returnData);
 		return ResponseEntity.ok(returnData);
 		
 	}
@@ -308,20 +282,6 @@ public class Mn200Controller {
 		
 		HashMap<String, String> newData = new HashMap<String,String>();
 		
-		System.out.println("-------------------------------");
-		System.out.println("userNum : " 	+ usrNum);
-		System.out.println("userName : " 	+ usrName);
-		System.out.println("userBirth : "	+ usrBirMd);
-		System.out.println("usePhoneNum : " + usrTelNum);
-		System.out.println("loginId : " 	+ loginId);
-		System.out.println("passNum : " 	+ passNum);
-		System.out.println("usrEmail : " 	+ usrEmail);
-		System.out.println("incCd : " 		+ incCd);
-		System.out.println("apoCd : " 		+ apoCd);
-		System.out.println("timNum : " 		+ timNum);
-	
-		
-		System.out.println("join 진입");
 		
 		newData.put("userNum", usrNum);
 		newData.put("userName", usrName);
@@ -335,9 +295,7 @@ public class Mn200Controller {
 		newData.put("userTimName", timNum);
 		
 		Map<String,Object> returnData = new HashMap<String,Object>();
-		System.out.println("usrNum = null 이 아닐때 : " + newData);
 		returnData.put("result",mn200Service.updateMember(newData));
-		System.out.println("넘어온값"+returnData);
 		return ResponseEntity.ok(returnData);
 		
 	}

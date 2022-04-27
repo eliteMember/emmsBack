@@ -27,7 +27,6 @@ public class Mn300Service {
 		
 		LoginVO userInfo = tbUsrMstMapper.TB_USR_MST_PS010(map);
 		
-		System.out.println("userInfo : " + userInfo);
 		
 		return userInfo;
 	}
@@ -45,7 +44,6 @@ public class Mn300Service {
 		
 		TB_TIM_MST_VO teamInfo = tbTimMstMapper.TB_TIM_MST_PS002(map);
 		
-		System.out.println("teamInfo : " + teamInfo);
 		
 		return teamInfo;
 	}
