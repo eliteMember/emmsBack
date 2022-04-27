@@ -18,10 +18,7 @@
 		<typeAlias alias="hmap" type="java.util.HashMap"/>
 		<typeAlias alias="list" type="java.util.List" />
 		
-		
-		<typeAlias alias="LoginVO" 			type="com.emms.mn.service.LoginVO" />
-		
-		<!-- TABLE Aliases -->
+		<!-- TABLE 기본 Aliases -->
 		<typeAlias alias="TB_AUTH_LST_VO" 			type="com.emms.vo.TB_AUTH_LST_VO" />
 		<typeAlias alias="TB_AUTH_MST_VO" 			type="com.emms.vo.TB_AUTH_MST_VO" />
 		<typeAlias alias="TB_CD_LST_VO" 			type="com.emms.vo.TB_CD_LST_VO" />
@@ -39,11 +36,15 @@
 		<typeAlias alias="TB_TIM_MST_VO" 			type="com.emms.vo.TB_TIM_MST_VO" />
 		<typeAlias alias="TB_USR_MST_VO" 			type="com.emms.vo.TB_USR_MST_VO" />
 		
+		<!-- 확장 Aliases -->
+		<typeAlias alias="LoginVO" 			type="com.emms.mn.service.LoginVO" />
 		<typeAlias alias="Me100_TB_MEM_MST_VO" 		type="com.emms.me.service.Me100_TB_MEM_MST_VO" />
-		
+		<typeAlias alias="Do101_TB_REL_DOC_LST_VO" 	type="com.emms.doc.service.Do101_TB_REL_DOC_LST_VO"/>
+		<typeAlias alias="Do101_TB_REL_DOC_LST_VO" 	type="com.emms.doc.service.Do101_TB_REL_DOC_LST_VO"/>
 		<typeAlias alias="WrkMcVo" 					type="com.emms.pm.service.WrkMcVo" />
 		<typeAlias alias="WrkScVo" 					type="com.emms.pm.service.WrkScVo" />
 		<typeAlias alias="MemVo" 					type="com.emms.pm.service.MemVo" />
+		<typeAlias alias="MhrVo" 					type="com.emms.pm.service.MhrVo" />
 	</typeAliases>
 	
 </configuration>

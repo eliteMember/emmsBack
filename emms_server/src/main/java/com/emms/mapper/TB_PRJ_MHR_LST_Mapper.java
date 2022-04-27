@@ -24,4 +24,7 @@ public interface TB_PRJ_MHR_LST_Mapper {
 	
 	//프로젝트공수내역 소분류(인력) 조회
 	List<MemVo> TB_PRJ_MHR_LST_VL001(TB_PRJ_MHR_LST_VO param);
+	
+	//프로젝트공수내역 소분류(인력) 조회
+	Integer TB_PRJ_MHR_LST_IL001(List<TB_PRJ_MHR_LST_VO> param);
 }

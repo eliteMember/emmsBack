@@ -16,10 +16,10 @@ public class TB_PRJ_MHR_MM_LST_VO implements Serializable {
 	private String mhrKndCd;    //공수종류코드
 	private String memNum;      //인력번호
 	private String mhrYm;       //공수년월
-	private int    mmSalQty;    //월매출수량
+	private double mmSalQty;    //월매출수량
 	private long   mmSalUnp;    //월매출단가
 	private long   mmSalAmt;    //월매출금액
-	private int    mmPurQty;    //월매입수량
+	private double mmPurQty;    //월매입수량
 	private long   mmPurUnp;    //월매입단가
 	private long   mmPurAmt;    //월매입금액
 	private long   totPrfAmt;   //총이익금액

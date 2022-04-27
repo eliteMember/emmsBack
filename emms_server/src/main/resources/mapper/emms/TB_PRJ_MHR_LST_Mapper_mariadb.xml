@@ -61,4 +61,8 @@
 	       and mem.use_yn	  = 'Y'
 	     order by SRT_ODR
  	</select>
+ 	
+ 	<insert id="TB_PRJ_MHR_LST_IL001" parameterType="list">
+		<!-- TODO 투입공수 insert 구문 작성 -->
+ 	</insert>
 </mapper>

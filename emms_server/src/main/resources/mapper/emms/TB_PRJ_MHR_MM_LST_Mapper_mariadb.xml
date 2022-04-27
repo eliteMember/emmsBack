@@ -3,12 +3,30 @@
 
 <mapper namespace="com.emms.mapper.TB_PRJ_MHR_MM_LST_Mapper">
 	
-	<select id="TB_PRJ_MHR_MM_LST_PL001" parameterType="TB_PRJ_MHR_LST_VO"  resultType="TB_PRJ_MHR_MM_LST_VO" >
-		select *
-		  from TB_PRJ_MHR_MM_LST
-	     where PRJ_NUM 	  = #{prjNum}
-	       and MHR_KND_CD = #{mhrKndCd}
-	       and MEM_NUM    = #{memNum}
+	<select id="TB_PRJ_MHR_MM_LST_PL001" parameterType="TB_PRJ_MHR_LST_VO"  resultType="MhrVo" >
+	<![CDATA[
+	select mm.MHR_YM
+		 , FORMAT(m.MM_PUR_QTY, 1) as MM_PUR_QTY 
+	  from TB_PRJ_MHR_MM_LST m
+	 right outer join (with recursive PRJ_MST(MHR_YM) as (
+						select PRJ_START_YM as MHR_YM
+						  from TB_PRJ_MST
+						 where PRJ_NUM = #{prjNum}
+						 
+						 union all
+						 
+						select DATE_FORMAT(DATE_ADD(STR_TO_DATE(concat(PM.MHR_YM, 01), '%Y%m%d'), interval 1 month), '%Y%m') as MHR_YM
+						  from TB_PRJ_MST TPM
+						     , PRJ_MST PM
+						 where PRJ_NUM = #{prjNum}
+						   and PM.MHR_YM < TPM.PRJ_END_YM
+					   ) select	*
+					       from	PRJ_MST) as mm
+		on mm.MHR_YM = m.MHR_YM
+	   and m.PRJ_NUM = #{prjNum}
+	   and m.MHR_KND_CD = #{mhrKndCd}
+	   and m.MEM_NUM = #{memNum}
+	   ]]>
  	</select>
 	
 </mapper>

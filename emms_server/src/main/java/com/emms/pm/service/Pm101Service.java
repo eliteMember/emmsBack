@@ -11,7 +11,6 @@ import com.emms.mapper.TB_PRJ_MHR_LST_Mapper;
 import com.emms.mapper.TB_PRJ_MHR_MM_LST_Mapper;
 import com.emms.mapper.TB_PRJ_MST_Mapper;
 import com.emms.vo.TB_PRJ_MHR_LST_VO;
-import com.emms.vo.TB_PRJ_MHR_MM_LST_VO;
 import com.emms.vo.TB_PRJ_MST_VO;
 
 @Service("pm101Service")
@@ -68,7 +67,7 @@ public class Pm101Service {
 				for(MemVo memRow : lstMem) {
 					//월투입공수 조회
 					paramMhr.setMemNum(memRow.getMemNum());
-					List<TB_PRJ_MHR_MM_LST_VO> 	rsMhr = tbPrjMhrMmLstMapper.TB_PRJ_MHR_MM_LST_PL001(paramMhr);
+					List<MhrVo> rsMhr = tbPrjMhrMmLstMapper.TB_PRJ_MHR_MM_LST_PL001(paramMhr);
 					
 					//소분류(인력) 리스트 추가
 					memRow.setMhr(rsMhr);
@@ -84,5 +83,80 @@ public class Pm101Service {
 		}
 		
 		return rsWrkMc;
+	}
+	
+	/**
+	 * 비어있는 프로젝트 기간 공수 조회
+	 * @author : 오태윤
+	 * @date   : 2022-04-25
+	 * @return : List<MhrVo>
+	 * @throws Exception 
+	 */
+	public List<MhrVo> listNewPrjMhr(String prjNum) throws Exception {
+		
+		TB_PRJ_MHR_LST_VO param = new TB_PRJ_MHR_LST_VO();
+		
+		param.setPrjNum(prjNum);
+		param.setMhrKndCd("30");
+		param.setMemNum("");
+		
+		List<MhrVo> rsMhr = tbPrjMhrMmLstMapper.TB_PRJ_MHR_MM_LST_PL001(param);
+		
+		return rsMhr;
+	}
+	
+	/**
+	 * 투입공수 저장
+	 * @author : 오태윤
+	 * @date   : 2022-04-26
+	 * @return : Integer 저장 성공건수
+	 * @throws Exception 
+	 */
+	public Integer saveMhr(List<WrkMcVo> paramList, String prjNum) throws Exception {
+		
+		//저장 건수
+		Integer cntSaveMc = 0;
+		
+		List<TB_PRJ_MHR_LST_VO> saveList = new ArrayList<TB_PRJ_MHR_LST_VO>();
+	
+		for(WrkMcVo wrkMc : paramList) {
+			for(WrkScVo wrkSc : wrkMc.getWrkSc()) {
+				for(MemVo mem : wrkSc.getMem()) {
+					TB_PRJ_MHR_LST_VO savePrjMhrVo = new TB_PRJ_MHR_LST_VO();
+					savePrjMhrVo.setPrjNum(prjNum);
+					savePrjMhrVo.setMhrKndCd("30");
+					savePrjMhrVo.setMemNum(mem.getMemNum());
+					savePrjMhrVo.setSrtOdr("0");
+					savePrjMhrVo.setWrkMcNm(wrkMc.getWrkMcNm());
+					savePrjMhrVo.setWrkScNm(wrkSc.getWrkScNm());
+					savePrjMhrVo.setRolNm(mem.getRolNm());
+					savePrjMhrVo.setMemRnkCd(mem.getMemRnkCd());
+					
+					int startFlag = 0;	//투입시작일자 플래그 ( 0 = 투입X / 1 = 투입)
+					int endFlag = 0;	//투입종료일자 플래그 ( 0 = 투입종료X / 1 = 투입종료)
+					
+					for(MhrVo mhr : mem.getMhr()) {
+						if(startFlag == 0 && Double.parseDouble(mhr.getMmPurQty()) > 0) {
+							savePrjMhrVo.setDepStartDt(mem.getDepStartDt()+"01");
+							startFlag = 1;
+						}
+						
+						//TODO : 종료일 계산.
+//						if(startFlag == 1 && endFlag == 0 && Integer.parseInt(mhr.getMmPurQty()) = 0) {
+//							
+//						}
+						
+						//TODO : 프로젝트공수월내역 insert or update or delete (실투입이 줄어들면 프로젝트공수월내역은 삭제?)
+					}
+
+					saveList.add(savePrjMhrVo);
+				}
+			}
+		}
+		
+		
+		cntSaveMc += tbPrjMhrLstMapper.TB_PRJ_MHR_LST_IL001(saveList);
+		
+		return cntSaveMc;
 	}
 }
